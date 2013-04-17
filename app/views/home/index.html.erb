@@ -1,11 +1,13 @@
 <% if user_signed_in? %>
-   <p align="center"> Signed in as
+   Вы зашли как
     <%= current_user.email %>.
-    Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-     <a href="http://fierce-beyond-9931.herokuapp.com/calculations/new">Создание расчета</a>
-      <a href="http://fierce-beyond-9931.herokuapp.com/calculations/index">Список расчетов</a>
-      <a href="http://fierce-beyond-9931.herokuapp.com/users/index">Список пользователей</a>
+     <p align="center">
+     <%= link_to "Создание расчета", new_calculation_path%>
+     <%= link_to "Список расчетов", calculations_path%>
+     <%= link_to "Список пользователей",users_index_path%>
+     </p>
+      <%= link_to "Выход", destroy_user_session_path, :method => :delete %>
 <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-    </p>
+    <%= link_to "Вход", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+   
 <% end %>

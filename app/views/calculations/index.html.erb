@@ -1,3 +1,8 @@
 <% @calculations.each do |calculation| %>
-<%= @calculation.name %>
+
+  <%= link_to "#{calculation.name}", calculation %>
+<br/>
+    
 <%end%>
+ <br/>
+    <%= link_to "<<назад", home_index_path%>

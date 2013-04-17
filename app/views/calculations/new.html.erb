@@ -3,4 +3,7 @@
     <%= f.text_field :name %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit "Создать" %>
+    <br/>
 <%end%>
+ <br/>
+    <%= link_to "<<назад", home_index_path%>
