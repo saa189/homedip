@@ -1,9 +1,108 @@
 <%= form_for @calculation do |f| %>
-    <%= f.label :name%>
+    <%= f.label :Название_расчета%>
     <%= f.text_field :name %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.submit "Создать" %>
     <br/>
+    <%= f.label :Полная_масса_автомобиля%>
+    <%= f.text_field :mass_avto %>
+    <br/>
+    <%= f.label :Колея_автомобиля%>
+    <%= f.text_field :col_avto %>
+    <br/>
+    <%= f.label :Высота_автомобиля%>
+    <%= f.text_field :height_avto %>
+    <br/>
+    <%= f.label :Коэфициент_аэродинамического_сопротивления%>
+    <%= f.text_field :k_air_sopr %>
+    <br/>
+    <%= f.label :Ширина_профиля_шины%>
+    <%= f.text_field :shin_wide %>
+    <br/>
+    <%= f.label :Высота_профиля_шины%>
+    <%= f.text_field :shin_height %>
+    <br/>
+    <%= f.label :Посадочный_диаметр%>
+    <%= f.text_field :sit_diam %>
+    <br/>
+    <%= f.label :Максимальная_мощность_двигателя%>
+    <%= f.text_field :n_e_max %>
+    <br/>
+    <%= f.label :Максимальный_момент_двигателя%>
+    <%= f.text_field :m_e_max %>
+    <br/>
+    <%= f.label :Обороты_двигателя_при_максимальной_мощности%>
+    <%= f.text_field :n_N %>
+    <br/>
+    <%= f.label :Обороты_двигателя_при_максимальном_моменте%>
+    <%= f.text_field :n_m %>
+    <br/>
+    <%= f.label :Минимальные_обороты_двигателя%>
+    <%= f.text_field :n_min %>
+    <br/>
+    <%= f.label :Максимальные_обороты_двигателя%>
+    <%= f.text_field :n_k %>
+    <br/>
+    <%= f.label :Потери_на_навесное_оборудывание%>
+    <%= f.text_field :nu_b %>
+    <br/>
+    <%= f.label :КПД_трансмиссии%>
+    <%= f.text_field :nu_t %>
+    <br/>
+    <%= f.label :Передаточное_число_главной_передачи%>
+    <%= f.text_field :uo %>
+    <br/>
+    <%= f.label :Количество_передач%>
+    <%= f.text_field :n %>
+    <br/>
+    <%= f.label :Передаточное_число_1_передачи%>
+    <%= f.text_field :uk1 %>
+    <br/>
+    <%= f.label :Передаточное_число_2_передачи%>
+    <%= f.text_field :uk2 %>
+    <br/>
+    <%= f.label :Передаточное_число_3_передачи%>
+    <%= f.text_field :uk3 %>
+    <br/>
+    <%= f.label :Передаточное_число_4_передачи%>
+    <%= f.text_field :uk4 %>
+    <br/>
+    <%= f.label :Передаточное_число_5_передачи%>
+    <%= f.text_field :uk5 %>
+    <br/>
+    <%= f.label :Передаточное_число_6_передачи%>
+    <%= f.text_field :uk6 %>
+    <br/>
+    <%= f.label :Передаточное_число_7_передачи%>
+    <%= f.text_field :uk7 %>
+    <br/>
+    <%= f.label :Передаточное_число_8_передачи%>
+    <%= f.text_field :uk8 %>
+    <br/>
+    <%= f.label :Передаточное_число_9_передачи%>
+    <%= f.text_field :uk9 %>
+    <br/>
+    <%= f.label :Передаточное_число_10_передачи%>
+    <%= f.text_field :uk10 %>
+    <br/>
+    <%= f.label :Передаточное_число_11_передачи%>
+    <%= f.text_field :uk11 %>
+    <br/>
+    <%= f.label :Передаточное_число_12_передачи%>
+    <%= f.text_field :uk12 %>
+    <br/>
+    <%= f.label :Передаточное_число_13_передачи%>
+    <%= f.text_field :uk13 %>
+    <br/>
+    <%= f.label :Передаточное_число_14_передачи%>
+    <%= f.text_field :uk14 %>
+    <br/>
+    <%= f.label :Передаточное_число_15_передачи%>
+    <%= f.text_field :uk15 %>
+    <br/>
+    <%= f.label :Коэфициент_сопротивления_дороги%>
+    <%= f.text_field :kroad %>
+
 <%end%>
  <br/>
     <%= link_to "<<назад", home_index_path%>

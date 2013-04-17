@@ -11,14 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326090722) do
+ActiveRecord::Schema.define(:version => 20130417093338) do
 
-  create_table "calculations", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+# Could not dump table "calculations" because of following StandardError
+#   Unknown type 'real' for column 'col_avto'
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
