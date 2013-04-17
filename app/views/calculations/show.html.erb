@@ -2,6 +2,17 @@
 
 <%= @calculation.name %>
  <br/>
+Масса автомобиля <%= @calculation.mass_avto %>
+ <br/>
+ Колея автомобиля <%= @calculation.col_avto %>
+ <br/>
+Момент максимальной мощности. Mn = <%= (@calculation.n_e_max+0.0)/@calculation.n_N	 %> Н*м
+ <br/>
+Mmax = <%= ((@calculation.n_e_max+0.0)/@calculation.n_N)*(1+(@calculation.n_N+0.0)/@calculation.n_m-((@calculation.n_N+0.0)/@calculation.n_m)*((@calculation.n_N+0.0)/@calculation.n_m)) 	 %>
+ <br/>
+
+ 
+ <br/>
  	<%= link_to "К списку расчетов", calculations_path%>
  	 <br/>
     <%= link_to "На главную", home_index_path%>
