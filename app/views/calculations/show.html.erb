@@ -2,11 +2,16 @@
 
 <%= @calculation.name %>
  <br/>
-Масса автомобиля <%= @calculation.mass_avto %>
+Максимальная мощность двигателя (Nemax): <%= @calculation.n_e_max*1000.0 %> Вт 
  <br/>
- Колея автомобиля <%= @calculation.col_avto %>
+ Обороты двигателя при максимальной мощности (nN): <%= @calculation.n_N %> об/мин 
  <br/>
-Момент максимальной мощности. Mn = <%=mn=@calculation.n_e_max*1000.0/@calculation.n_N*60.0	 %> Н*м
+
+ Обороты двигателя при максимальном моменте (nM): <%= @calculation.n_m %>  об/мин
+  <br/>
+Момент максимальной мощности (Mn): <%=mn=@calculation.n_e_max*1000.0/@calculation.n_N*60.0	 %> Н*м
+ <br/>
+Максимальная момент двигателя (Мemax): <%= @calculation.m_e_max %> Н*м 
  <br/>
 <% @calculation.n_e_max*1000.0/@calculation.n_N*60.0 %>
 <br/>
