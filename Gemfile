@@ -9,13 +9,15 @@ gem 'sqlite3', :group =>:development
 gem 'devise'
 gem 'pg', :group =>:production
 gem "twitter-bootstrap-rails"
+gem "less-rails"
+gem 'therubyracer'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'therubyracer'
-  gem "less-rails"
+ 
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

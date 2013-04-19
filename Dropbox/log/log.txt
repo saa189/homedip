@@ -1,102 +1,102 @@
-2013-04-17T09:39:29.657434+00:00 app[web.1]: Completed 500 Internal Server Error in 8ms
-2013-04-17T09:39:29.659347+00:00 app[web.1]: 
-2013-04-17T09:39:29.659096+00:00 app[web.1]: 
-2013-04-17T09:39:29.659347+00:00 app[web.1]: 
-2013-04-17T09:39:29.659096+00:00 app[web.1]:     6:     <br/>
-2013-04-17T09:39:29.659096+00:00 app[web.1]:     8:     <%= f.text_field :mass_avto %>
-2013-04-17T09:39:29.659347+00:00 app[web.1]:   app/views/calculations/new.html.erb:1:in `_app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:39:29.659096+00:00 app[web.1]:     9:     <br/>
-2013-04-17T09:39:29.659096+00:00 app[web.1]:     10:     <%= f.label :Колея_автомобиля%>
-2013-04-17T09:39:29.659096+00:00 app[web.1]:   app/views/calculations/new.html.erb:8:in `block in _app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:39:45.359339+00:00 heroku[router]: at=info method=GET path=/calculations/new host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=14ms service=13ms status=500 bytes=643
-2013-04-17T09:39:45.347644+00:00 app[web.1]: Started GET "/calculations/new" for 188.255.86.94 at 2013-04-17 09:39:45 +0000
-2013-04-17T09:39:45.354917+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
-2013-04-17T09:39:45.351017+00:00 app[web.1]: Processing by CalculationsController#new as HTML
-2013-04-17T09:39:45.356437+00:00 app[web.1]: ActionView::Template::Error (undefined method `mass_avto' for #<Calculation:0x00000002361440>):
-2013-04-17T09:39:45.354848+00:00 app[web.1]:   Rendered calculations/new.html.erb within layouts/application (3.3ms)
-2013-04-17T09:39:45.356437+00:00 app[web.1]: 
-2013-04-17T09:39:45.356437+00:00 app[web.1]:     5:     <%= f.submit "Создать" %>
-2013-04-17T09:39:45.356437+00:00 app[web.1]:     6:     <br/>
-2013-04-17T09:39:45.356742+00:00 app[web.1]:   app/views/calculations/new.html.erb:1:in `_app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:39:45.356437+00:00 app[web.1]:     7:     <%= f.label :Полная_масса_автомобиля%>
-2013-04-17T09:39:45.356437+00:00 app[web.1]:     11:     <%= f.text_field :col_avto %>
-2013-04-17T09:39:45.356742+00:00 app[web.1]: 
-2013-04-17T09:39:45.356437+00:00 app[web.1]:     9:     <br/>
-2013-04-17T09:39:45.356437+00:00 app[web.1]:     8:     <%= f.text_field :mass_avto %>
-2013-04-17T09:39:45.356437+00:00 app[web.1]:     10:     <%= f.label :Колея_автомобиля%>
-2013-04-17T09:39:45.356437+00:00 app[web.1]:   app/views/calculations/new.html.erb:8:in `block in _app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:39:45.356742+00:00 app[web.1]: 
-2013-04-17T09:40:46.926638+00:00 heroku[api]: Starting process with command `bundle exec rake db:migrate` by life4997@mail.ru
-2013-04-17T09:40:49.643187+00:00 heroku[run.8872]: Starting process with command `bundle exec rake db:migrate`
-2013-04-17T09:40:49.643016+00:00 heroku[run.8872]: Awaiting client
-2013-04-17T09:40:50.582443+00:00 heroku[run.8872]: State changed from starting to up
-2013-04-17T09:40:57.889451+00:00 heroku[run.8872]: Client connection closed. Sending SIGHUP to all processes
-2013-04-17T09:40:59.140611+00:00 heroku[run.8872]: Process exited with status 0
-2013-04-17T09:40:59.155426+00:00 heroku[run.8872]: State changed from up to complete
-2013-04-17T09:41:22.582648+00:00 app[web.1]: Processing by CalculationsController#new as HTML
-2013-04-17T09:41:22.580612+00:00 app[web.1]: Started GET "/calculations/new" for 188.255.86.94 at 2013-04-17 09:41:22 +0000
-2013-04-17T09:41:22.600413+00:00 app[web.1]:   app/views/calculations/new.html.erb:8:in `block in _app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:41:22.600413+00:00 app[web.1]: 
-2013-04-17T09:41:22.600413+00:00 app[web.1]:     7:     <%= f.label :Полная_масса_автомобиля%>
-2013-04-17T09:41:22.600413+00:00 app[web.1]:     11:     <%= f.text_field :col_avto %>
-2013-04-17T09:41:22.600413+00:00 app[web.1]:     6:     <br/>
-2013-04-17T09:41:22.600670+00:00 app[web.1]: 
-2013-04-17T09:41:22.600413+00:00 app[web.1]:     8:     <%= f.text_field :mass_avto %>
-2013-04-17T09:41:22.600670+00:00 app[web.1]: 
-2013-04-17T09:41:22.600413+00:00 app[web.1]: ActionView::Template::Error (undefined method `mass_avto' for #<Calculation:0x00000001926610>):
-2013-04-17T09:41:22.600413+00:00 app[web.1]:     5:     <%= f.submit "Создать" %>
-2013-04-17T09:41:22.600413+00:00 app[web.1]:     9:     <br/>
-2013-04-17T09:41:22.600413+00:00 app[web.1]:     10:     <%= f.label :Колея_автомобиля%>
-2013-04-17T09:41:22.593394+00:00 app[web.1]:   Rendered calculations/new.html.erb within layouts/application (4.1ms)
-2013-04-17T09:41:22.600917+00:00 heroku[router]: at=info method=GET path=/calculations/new host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=32ms status=500 bytes=643
-2013-04-17T09:41:22.598783+00:00 app[web.1]: Completed 500 Internal Server Error in 10ms
-2013-04-17T09:41:22.600670+00:00 app[web.1]:   app/views/calculations/new.html.erb:1:in `_app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:42:04.728934+00:00 app[web.1]: Started GET "/calculations/new" for 188.255.86.94 at 2013-04-17 09:42:04 +0000
-2013-04-17T09:42:04.730585+00:00 app[web.1]: Processing by CalculationsController#new as HTML
-2013-04-17T09:42:04.734435+00:00 app[web.1]:   Rendered calculations/new.html.erb within layouts/application (3.3ms)
-2013-04-17T09:42:04.734503+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
-2013-04-17T09:42:04.739070+00:00 app[web.1]: ActionView::Template::Error (undefined method `mass_avto' for #<Calculation:0x000000047a3268>):
-2013-04-17T09:42:04.739070+00:00 app[web.1]:     6:     <br/>
-2013-04-17T09:42:04.739070+00:00 app[web.1]:     7:     <%= f.label :Полная_масса_а
-втомобиля%>
-2013-04-17T09:42:04.739070+00:00 app[web.1]: 
-2013-04-17T09:42:04.739070+00:00 app[web.1]:     5:     <%= f.submit "Создать" %>
-2013-04-17T09:42:04.739070+00:00 app[web.1]:     9:     <br/>
-2013-04-17T09:42:04.739070+00:00 app[web.1]:     8:     <%= f.text_field :mass_avto %>
-2013-04-17T09:42:04.739070+00:00 app[web.1]:     11:     <%= f.text_field :col_avto %>
-2013-04-17T09:42:04.739070+00:00 app[web.1]:   app/views/calculations/new.html.erb:8:in `block in _app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:42:04.739337+00:00 app[web.1]:   app/views/calculations/new.html.erb:1:in `_app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:42:04.739337+00:00 app[web.1]: 
-2013-04-17T09:42:04.739070+00:00 app[web.1]:     10:     <%= f.label :Колея_автомобиля%>
-2013-04-17T09:42:04.739337+00:00 app[web.1]: 
-2013-04-17T09:42:04.740801+00:00 heroku[router]: at=info method=GET path=/calculations/new host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=15ms status=500 bytes=643
-2013-04-17T09:42:27.815947+00:00 app[web.1]: Started GET "/home/index" for 91.241.12.27 at 2013-04-17 09:42:27 +0000
-2013-04-17T09:42:27.817908+00:00 app[web.1]: Processing by HomeController#index as HTML
-2013-04-17T09:42:27.824011+00:00 heroku[router]: at=info method=GET path=/home/index host=fierce-beyond-9931.herokuapp.com fwd="91.241.12.27" dyno=web.1 connect=1ms service=9ms status=304 bytes=0
-2013-04-17T09:42:27.821811+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.1ms)
-2013-04-17T09:42:27.820787+00:00 app[web.1]:   Rendered home/index.html.erb within layouts/application (2.4ms)
-2013-04-17T09:42:27.976792+00:00 heroku[router]: at=info method=GET path=/assets/application-e1e25f5530998b76317739a1762b3401.css host=fierce-beyond-9931.herokuapp.com fwd="91.241.12.27" dyno=web.1 connect=0ms service=7ms status=304 bytes=0
-2013-04-17T09:42:27.972990+00:00 app[web.1]: Started GET "/assets/application-e1e25f5530998b76317739a1762b3401.css" for 91.241.12.27 at 2013-04-17 09:42:27 +0000
-2013-04-17T09:42:27.974422+00:00 app[web.1]: Served asset /application-e1e25f5530998b76317739a1762b3401.css - 304 Not Modified (0ms)
-2013-04-17T09:42:28.013783+00:00 app[web.1]: Served asset /application-9bd69fb0da4e1919c641f3ec2f35d4e2.js - 304 Not Modified (0ms)
-2013-04-17T09:42:28.010697+00:00 app[web.1]: Started GET "/assets/application-9bd69fb0da4e1919c641f3ec2f35d4e2.js" for 91.241.12.27 at 2013-04-17 09:42:28 +0000
-2013-04-17T09:42:28.016100+00:00 heroku[router]: at=info method=GET path=/assets/application-9bd69fb0da4e1919c641f3ec2f35d4e2.js host=fierce-beyond-9931.herokuapp.com fwd="91.241.12.27" dyno=web.1 connect=1ms service=46ms status=304 bytes=0
-2013-04-17T09:42:28.216689+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=fierce-beyond-9931.herokuapp.com fwd="91.241.12.27" dyno=web.1 connect=0ms service=10ms status=200 bytes=0
-2013-04-17T09:42:29.300933+00:00 app[web.1]: Started GET "/calculations/new" for 91.241.12.27 at 2013-04-17 09:42:29 +0000
-2013-04-17T09:42:29.306598+00:00 app[web.1]: Processing by CalculationsController#new as HTML
-2013-04-17T09:42:29.310987+00:00 app[web.1]:   Rendered calculations/new.html.erb within layouts/application (3.7ms)
-2013-04-17T09:42:29.312574+00:00 app[web.1]: 
-2013-04-17T09:42:29.312818+00:00 app[web.1]: 
-2013-04-17T09:42:29.312574+00:00 app[web.1]: ActionView::Template::Error (undefined method `mass_avto' for #<Calculation:0x000000047cb8d0>):
-2013-04-17T09:42:29.312574+00:00 app[web.1]:     8:     <%= f.text_field :mass_avto %>
-2013-04-17T09:42:29.312574+00:00 app[web.1]:   app/views/calculations/new.html.erb:8:in `block in _app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:42:29.312574+00:00 app[web.1]:     5:     <%= f.submit "Создать" %>
-2013-04-17T09:42:29.312574+00:00 app[web.1]:     6:     <br/>
-2013-04-17T09:42:29.312574+00:00 app[web.1]:     10:     <%= f.label :Колея_автомобиля%>
-2013-04-17T09:42:29.312574+00:00 app[web.1]:     11:     <%= f.text_field :col_avto %>
-2013-04-17T09:42:29.312574+00:00 app[web.1]:     7:     <%= f.label :Полная_масса_автомобиля%>
-2013-04-17T09:42:29.312574+00:00 app[web.1]:     9:     <br/>
-2013-04-17T09:42:29.312818+00:00 app[web.1]: 
-2013-04-17T09:42:29.311059+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
-2013-04-17T09:42:29.312818+00:00 app[web.1]:   app/views/calculations/new.html.erb:1:in `_app_views_calculations_new_html_erb__4117273631988082273_29326900'
-2013-04-17T09:42:29.316737+00:00 heroku[router]: at=info method=GET path=/calculations/new host=fierce-beyond-9931.herokuapp.com fwd="91.241.12.27" dyno=web.1 connect=0ms service=28ms status=500 bytes=643
+2013-04-19T08:56:56.414130+00:00 app[web.1]: Processing by CalculationsController#show as HTML
+2013-04-19T08:56:56.465112+00:00 app[web.1]: Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.9ms)
+2013-04-19T08:56:56.453396+00:00 app[web.1]:   Rendered calculations/show.html.erb within layouts/application (0.6ms)
+2013-04-19T08:56:56.444267+00:00 app[web.1]:   Parameters: {"id"=>"9"}
+2013-04-19T08:56:57.071675+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=fierce-beyond-9931.herokuapp.com fwd="192.168.30.71, 77.108.92.106" dyno=web.1 connect=1ms service=63ms status=200 bytes=0
+2013-04-19T08:57:05.367342+00:00 app[web.1]: Started GET "/calculations" for 77.108.92.106 at 2013-04-19 08:57:05 +0000
+2013-04-19T08:57:05.370470+00:00 app[web.1]: Processing by CalculationsController#index as HTML
+2013-04-19T08:57:05.380109+00:00 app[web.1]: Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.0ms)
+2013-04-19T08:57:05.376942+00:00 app[web.1]:   Rendered calculations/index.html.erb within layouts/application (2.8ms)
+2013-04-19T08:57:05.381550+00:00 heroku[router]: at=info method=GET path=/calculations host=fierce-beyond-9931.herokuapp.com fwd="192.168.30.71, 77.108.92.106" dyno=web.1 connect=0ms service=24ms status=200 bytes=1126
+2013-04-19T08:57:12.344288+00:00 heroku[router]: at=info method=GET path=/home/index host=fierce-beyond-9931.herokuapp.com fwd="192.168.30.71, 77.108.92.106" dyno=web.1 connect=0ms service=9ms status=200 bytes=659
+2013-04-19T08:57:13.577519+00:00 app[web.1]: Started GET "/home/index" for 77.108.92.106 at 2013-04-19 08:57:12 +0000
+2013-04-19T08:57:13.577519+00:00 app[web.1]: Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+2013-04-19T08:57:13.577519+00:00 app[web.1]: Processing by HomeController#index as HTML
+2013-04-19T08:57:13.577519+00:00 app[web.1]:   Rendered home/index.html.erb within layouts/application (0.7ms)
+2013-04-19T08:57:19.980432+00:00 heroku[slugc]: Slug compilation started
+2013-04-19T08:58:06.164576+00:00 heroku[api]: Release v16 created by life4997@mail.ru
+2013-04-19T08:58:06.205100+00:00 heroku[api]: Deploy 2268e67 by life4997@mail.ru
+2013-04-19T08:58:06.283113+00:00 heroku[web.1]: State changed from up to starting
+2013-04-19T08:58:06.730433+00:00 heroku[slugc]: Slug compilation finished
+2013-04-19T08:58:08.646435+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 14359`
+2013-04-19T08:58:10.534000+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2013-04-19T08:58:11.473577+00:00 app[web.1]: 	/usr/local/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2013-04-19T08:58:11.473577+00:00 app[web.1]: [2013-04-19 08:58:11] ERROR SignalException: SIGTERM
+2013-04-19T08:58:12.458133+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2013-04-19T08:58:12.458697+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2013-04-19T08:58:12.459058+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2013-04-19T08:58:15.437881+00:00 app[web.1]: => Booting WEBrick
+2013-04-19T08:58:15.437881+00:00 app[web.1]: => Rails 3.2.13 application starting in production on http://0.0.0.0:14359
+2013-04-19T08:58:15.437881+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
+2013-04-19T08:58:15.437881+00:00 app[web.1]: => Ctrl-C to shutdown server
+2013-04-19T08:58:15.437881+00:00 app[web.1]: => Call with -d to detach
+2013-04-19T08:58:18.007877+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2013-04-19T08:58:19.055246+00:00 app[web.1]: 	/usr/local/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2013-04-19T08:58:19.055246+00:00 app[web.1]: [2013-04-19 08:58:19] ERROR SignalException: SIGTERM
+2013-04-19T08:58:19.682866+00:00 app[web.1]: [2013-04-19 08:58:19] INFO  ruby 1.9.2 (2011-07-09) [x86_64-linux]
+2013-04-19T08:58:19.682866+00:00 app[web.1]: [2013-04-19 08:58:19] INFO  WEBrick 1.3.1
+2013-04-19T08:58:19.683166+00:00 app[web.1]: [2013-04-19 08:58:19] INFO  WEBrick::HTTPServer#start: pid=2 port=14359
+2013-04-19T08:58:19.950880+00:00 heroku[web.1]: State changed from starting to up
+2013-04-19T08:58:20.490080+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2013-04-19T08:58:20.489980+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2013-04-19T08:58:21.804444+00:00 app[web.1]: Started GET "/calculations" for 77.108.92.106 at 2013-04-19 08:58:21 +0000
+2013-04-19T08:58:21.948913+00:00 app[web.1]: Processing by CalculationsController#index as HTML
+2013-04-19T08:58:22.583542+00:00 app[web.1]: WARN: tilt autoloading 'less' in a non thread-safe way; explicit require 'less' suggested.
+2013-04-19T08:58:22.578746+00:00 app[web.1]:   Rendered calculations/index.html.erb within layouts/application (39.1ms)
+2013-04-19T08:58:22.898277+00:00 heroku[we
+b.1]: Process exited with status 137
+2013-04-19T08:58:22.982243+00:00 app[web.1]:     3: <head>
+2013-04-19T08:58:22.982243+00:00 app[web.1]:     4:   <title>Diplom</title>
+2013-04-19T08:58:22.982243+00:00 app[web.1]:     7:   <%= csrf_meta_tags %>
+2013-04-19T08:58:22.982501+00:00 app[web.1]: 
+2013-04-19T08:58:22.979690+00:00 app[web.1]: Completed 500 Internal Server Error in 1031ms
+2013-04-19T08:58:22.982243+00:00 app[web.1]: 
+2013-04-19T08:58:22.982243+00:00 app[web.1]: ActionView::Template::Error ('twitter/bootstrap/bootstrap.less' wasn't found.
+2013-04-19T08:58:22.982243+00:00 app[web.1]: 
+2013-04-19T08:58:22.982243+00:00 app[web.1]:   (in /app/app/assets/stylesheets/bootstrap_and_overrides.css.less)):
+2013-04-19T08:58:22.982243+00:00 app[web.1]:     6:   <%= javascript_include_tag "application" %>
+2013-04-19T08:58:22.982243+00:00 app[web.1]:     2: <html>
+2013-04-19T08:58:22.982243+00:00 app[web.1]:     5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+2013-04-19T08:58:22.982501+00:00 app[web.1]: 
+2013-04-19T08:58:22.982501+00:00 app[web.1]:   app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2163109273094368902_42845280'
+2013-04-19T08:58:22.982501+00:00 app[web.1]:     8:   <%= javascript_include_tag "application" %>
+2013-04-19T08:58:22.990087+00:00 heroku[router]: at=info method=GET path=/calculations host=fierce-beyond-9931.herokuapp.com fwd="192.168.30.71, 77.108.92.106" dyno=web.1 connect=1ms service=1235ms status=500 bytes=643
+2013-04-19T08:59:14.598500+00:00 app[web.1]: Started GET "/calculations/9" for 188.255.86.94 at 2013-04-19 08:59:14 +0000
+2013-04-19T08:59:14.607285+00:00 app[web.1]: Processing by CalculationsController#show as HTML
+2013-04-19T08:59:14.607285+00:00 app[web.1]:   Parameters: {"id"=>"9"}
+2013-04-19T08:59:15.390655+00:00 app[web.1]:   Rendered calculations/show.html.erb within layouts/application (8.7ms)
+2013-04-19T08:59:15.403068+00:00 app[web.1]: Completed 500 Internal Server Error in 795ms
+2013-04-19T08:59:15.405592+00:00 app[web.1]: 
+2013-04-19T08:59:15.405592+00:00 app[web.1]: ActionView::Template::Error ('twitter/bootstrap/bootstrap.less' wasn't found.
+2013-04-19T08:59:15.405592+00:00 app[web.1]:   (in /app/app/assets/stylesheets/bootstrap_and_overrides.css.less)):
+2013-04-19T08:59:15.405592+00:00 app[web.1]:     2: <html>
+2013-04-19T08:59:15.405592+00:00 app[web.1]:     3: <head>
+2013-04-19T08:59:15.405592+00:00 app[web.1]:     4:   <title>Diplom</title>
+2013-04-19T08:59:15.405592+00:00 app[web.1]:     5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+2013-04-19T08:59:15.405592+00:00 app[web.1]: 
+2013-04-19T08:59:15.406365+00:00 heroku[router]: at=info method=GET path=/calculations/9 host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=812ms status=500 bytes=643
+2013-04-19T08:59:15.405592+00:00 app[web.1]:     6:   <%= javascript_include_tag "application" %>
+2013-04-19T08:59:15.405592+00:00 app[web.1]:     7:   <%= csrf_meta_tags %>
+2013-04-19T08:59:15.405894+00:00 app[web.1]:   app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2163109273094368902_42845280'
+2013-04-19T08:59:15.405894+00:00 app[web.1]: 
+2013-04-19T08:59:15.405894+00:00 app[web.1]: 
+2013-04-19T08:59:15.405894+00:00 app[web.1]:     8:   <%= javascript_include_tag "application" %>
+2013-04-19T08:59:20.664726+00:00 app[web.1]: Started GET "/" for 188.255.86.94 at 2013-04-19 08:59:20 +0000
+2013-04-19T08:59:20.670353+00:00 app[web.1]: Processing by HomeController#index as HTML
+2013-04-19T08:59:20.886467+00:00 app[web.1]:   Rendered home/index.html.erb within layouts/application (213.6ms)
+2013-04-19T08:59:20.960959+00:00 app[web.1]: Completed 500 Internal Server Error in 290ms
+2013-04-19T08:59:20.964724+00:00 app[web.1]:     6:   <%= javascript_include_tag "application" %>
+2013-04-19T08:59:20.965017+00:00 app[web.1]:   app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2163109273094368902_42845280'
+2013-04-19T08:59:20.964724+00:00 app[web.1]:   (in /app/app/assets/stylesheets/bootstrap_and_overrides.css.less)):
+2013-04-19T08:59:20.964724+00:00 app[web.1]:     5:   <%= stylesheet_link_tag    "application", :media => "all" %>
+2013-04-19T08:59:20.964724+00:00 app[web.1]: 
+2013-04-19T08:59:20.964724+00:00 app[web.1]:     7:   <%= csrf_meta_tags %>
+2013-04-19T08:59:20.964724+00:00 app[web.1]: ActionView::Template::Error ('twitter/bootstrap/bootstrap.less' wasn't found.
+2013-04-19T08:59:20.965017+00:00 app[web.1]: 
+2013-04-19T08:59:20.964724+00:00 app[web.1]: 
+2013-04-19T08:59:20.965017+00:00 app[web.1]: 
+2013-04-19T08:59:20.964724+00:00 app[web.1]:     2: <html>
+2013-04-19T08:59:20.964724+00:00 app[web.1]:     4:   <title>Diplom</title>
+2013-04-19T08:59:20.965305+00:00 heroku[router]: at=info method=GET path=/ host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=4ms service=308ms status=500 bytes=643
+2013-04-19T08:59:20.964724+00:00 app[web.1]:     3: <head>
+2013-04-19T08:59:20.965017+00:00 app[web.1]:     8:   <%= javascript_include_tag "application" %>
