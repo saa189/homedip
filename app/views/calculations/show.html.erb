@@ -9,7 +9,7 @@
 
  Обороты двигателя при максимальном моменте (nM): <%= @calculation.n_m %>  об/мин
   <br/>
-Момент максимальной мощности (Mn): <%=mn=@calculation.n_e_max*1000.0/@calculation.n_N*60.0	 %> Н*м
+Момент максимальной мощности (Mn): <%=mn=@calculation.n_e_max*1000.0/(@calculation.n_N*2*Math::PI/60.0)	 %> Н*м
  <br/>
 Максимальная момент двигателя (Мemax): <%= @calculation.m_e_max %> Н*м 
  <br/>
@@ -17,11 +17,12 @@
 <br/>
 <% x=(@calculation.n_m+0.0)/@calculation.n_N %>
 <% k=@calculation.m_e_max/mn %>
-c =<%= c = (1-k)/(2*x-(x*x)-1)	 %> 
+<% c = (1-k)/(2*x-(x*x)-1)	 %> 
+a = <%= a = k-c*x*x	 %> 
 <br/>
 b = <%= b = 2*c*x	 %> 
  <br/>
- a = <%= a = k-c*x*x	 %> 
+ c = <%=c%>
  <br/>
  a+b-c = <%=a+b-c %>
   <br/>
