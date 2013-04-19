@@ -1,31 +1,89 @@
+<%- model_class = Calculation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @calculation.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @calculation.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mass_avto) %>:</strong></dt>
+  <dd><%= @calculation.mass_avto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:col_avto) %>:</strong></dt>
+  <dd><%= @calculation.col_avto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:height_avto) %>:</strong></dt>
+  <dd><%= @calculation.height_avto %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:k_air_sopr) %>:</strong></dt>
+  <dd><%= @calculation.k_air_sopr %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:shin_wide) %>:</strong></dt>
+  <dd><%= @calculation.shin_wide %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:shin_height) %>:</strong></dt>
+  <dd><%= @calculation.shin_height %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sit_diam) %>:</strong></dt>
+  <dd><%= @calculation.sit_diam %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_e_max) %>:</strong></dt>
+  <dd><%= @calculation.n_e_max %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:m_e_max) %>:</strong></dt>
+  <dd><%= @calculation.m_e_max %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_N) %>:</strong></dt>
+  <dd><%= @calculation.n_N %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_m) %>:</strong></dt>
+  <dd><%= @calculation.n_m %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_min) %>:</strong></dt>
+  <dd><%= @calculation.n_min %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n_k) %>:</strong></dt>
+  <dd><%= @calculation.n_k %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nu_b) %>:</strong></dt>
+  <dd><%= @calculation.nu_b %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nu_t) %>:</strong></dt>
+  <dd><%= @calculation.nu_t %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uo) %>:</strong></dt>
+  <dd><%= @calculation.uo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:n) %>:</strong></dt>
+  <dd><%= @calculation.n %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk1) %>:</strong></dt>
+  <dd><%= @calculation.uk1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk2) %>:</strong></dt>
+  <dd><%= @calculation.uk2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk3) %>:</strong></dt>
+  <dd><%= @calculation.uk3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk4) %>:</strong></dt>
+  <dd><%= @calculation.uk4 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk5) %>:</strong></dt>
+  <dd><%= @calculation.uk5 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk6) %>:</strong></dt>
+  <dd><%= @calculation.uk6 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk7) %>:</strong></dt>
+  <dd><%= @calculation.uk7 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk8) %>:</strong></dt>
+  <dd><%= @calculation.uk8 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk9) %>:</strong></dt>
+  <dd><%= @calculation.uk9 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk10) %>:</strong></dt>
+  <dd><%= @calculation.uk10 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk11) %>:</strong></dt>
+  <dd><%= @calculation.uk11 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk12) %>:</strong></dt>
+  <dd><%= @calculation.uk12 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk13) %>:</strong></dt>
+  <dd><%= @calculation.uk13 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk14) %>:</strong></dt>
+  <dd><%= @calculation.uk14 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:uk15) %>:</strong></dt>
+  <dd><%= @calculation.uk15 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kroad) %>:</strong></dt>
+  <dd><%= @calculation.kroad %></dd>
+</dl>
 
-<%= @calculation.name %>
- <br/>
-Максимальная мощность двигателя (Nemax): <%= @calculation.n_e_max*1000.0 %> Вт 
- <br/>
- Обороты двигателя при максимальной мощности (nN): <%= @calculation.n_N %> об/мин 
- <br/>
-
- Обороты двигателя при максимальном моменте (nM): <%= @calculation.n_m %>  об/мин
-  <br/>
-Момент максимальной мощности (Mn): <%=mn=@calculation.n_e_max*1000.0/(@calculation.n_N*2*Math::PI/60.0)	 %> Н*м
- <br/>
-Максимальная момент двигателя (Мemax): <%= @calculation.m_e_max %> Н*м 
- <br/>
-<% @calculation.n_e_max*1000.0/@calculation.n_N*60.0 %>
-<br/>
-<% x=(@calculation.n_m+0.0)/@calculation.n_N %>
-<% k=@calculation.m_e_max/mn %>
-<% c = (1-k)/(2*x-(x*x)-1)	 %> 
-a = <%= a = k-c*x*x	 %> 
-<br/>
-b = <%= b = 2*c*x	 %> 
- <br/>
- c = <%=c%>
- <br/>
- a+b-c = <%=a+b-c %>
-  <br/>
- 	<%= link_to "К списку расчетов", calculations_path%>
- 	 <br/>
-    <%= link_to "На главную", home_index_path%>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              calculations_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_calculation_path(@calculation), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              calculation_path(@calculation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
