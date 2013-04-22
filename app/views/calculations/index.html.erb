@@ -6,42 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:mass_avto) %></th>
-      <th><%= model_class.human_attribute_name(:col_avto) %></th>
-      <th><%= model_class.human_attribute_name(:height_avto) %></th>
-      <th><%= model_class.human_attribute_name(:k_air_sopr) %></th>
-      <th><%= model_class.human_attribute_name(:shin_wide) %></th>
-      <th><%= model_class.human_attribute_name(:shin_height) %></th>
-      <th><%= model_class.human_attribute_name(:sit_diam) %></th>
-      <th><%= model_class.human_attribute_name(:n_e_max) %></th>
-      <th><%= model_class.human_attribute_name(:m_e_max) %></th>
-      <th><%= model_class.human_attribute_name(:n_N) %></th>
-      <th><%= model_class.human_attribute_name(:n_m) %></th>
-      <th><%= model_class.human_attribute_name(:n_min) %></th>
-      <th><%= model_class.human_attribute_name(:n_k) %></th>
-      <th><%= model_class.human_attribute_name(:nu_b) %></th>
-      <th><%= model_class.human_attribute_name(:nu_t) %></th>
-      <th><%= model_class.human_attribute_name(:uo) %></th>
-      <th><%= model_class.human_attribute_name(:n) %></th>
-      <th><%= model_class.human_attribute_name(:uk1) %></th>
-      <th><%= model_class.human_attribute_name(:uk2) %></th>
-      <th><%= model_class.human_attribute_name(:uk3) %></th>
-      <th><%= model_class.human_attribute_name(:uk4) %></th>
-      <th><%= model_class.human_attribute_name(:uk5) %></th>
-      <th><%= model_class.human_attribute_name(:uk6) %></th>
-      <th><%= model_class.human_attribute_name(:uk7) %></th>
-      <th><%= model_class.human_attribute_name(:uk8) %></th>
-      <th><%= model_class.human_attribute_name(:uk9) %></th>
-      <th><%= model_class.human_attribute_name(:uk10) %></th>
-      <th><%= model_class.human_attribute_name(:uk11) %></th>
-      <th><%= model_class.human_attribute_name(:uk12) %></th>
-      <th><%= model_class.human_attribute_name(:uk13) %></th>
-      <th><%= model_class.human_attribute_name(:uk14) %></th>
-      <th><%= model_class.human_attribute_name(:uk15) %></th>
-      <th><%= model_class.human_attribute_name(:kroad) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -50,40 +15,6 @@
       <tr>
         <td><%= link_to calculation.id, calculation_path(calculation) %></td>
         <td><%= calculation.name %></td>
-        <td><%= calculation.user_id %></td>
-        <td><%= calculation.mass_avto %></td>
-        <td><%= calculation.col_avto %></td>
-        <td><%= calculation.height_avto %></td>
-        <td><%= calculation.k_air_sopr %></td>
-        <td><%= calculation.shin_wide %></td>
-        <td><%= calculation.shin_height %></td>
-        <td><%= calculation.sit_diam %></td>
-        <td><%= calculation.n_e_max %></td>
-        <td><%= calculation.m_e_max %></td>
-        <td><%= calculation.n_N %></td>
-        <td><%= calculation.n_m %></td>
-        <td><%= calculation.n_min %></td>
-        <td><%= calculation.n_k %></td>
-        <td><%= calculation.nu_b %></td>
-        <td><%= calculation.nu_t %></td>
-        <td><%= calculation.uo %></td>
-        <td><%= calculation.n %></td>
-        <td><%= calculation.uk1 %></td>
-        <td><%= calculation.uk2 %></td>
-        <td><%= calculation.uk3 %></td>
-        <td><%= calculation.uk4 %></td>
-        <td><%= calculation.uk5 %></td>
-        <td><%= calculation.uk6 %></td>
-        <td><%= calculation.uk7 %></td>
-        <td><%= calculation.uk8 %></td>
-        <td><%= calculation.uk9 %></td>
-        <td><%= calculation.uk10 %></td>
-        <td><%= calculation.uk11 %></td>
-        <td><%= calculation.uk12 %></td>
-        <td><%= calculation.uk13 %></td>
-        <td><%= calculation.uk14 %></td>
-        <td><%= calculation.uk15 %></td>
-        <td><%= calculation.kroad %></td>
         <td><%=l calculation.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -102,3 +33,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_calculation_path,
             :class => 'btn btn-primary' %>
+ <%= link_to "назад", home_index_path%>

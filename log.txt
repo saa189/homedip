@@ -1,0 +1,102 @@
+2013-04-22T10:08:50.242672+00:00 heroku[router]: at=info method=GET path=/users/sign_in host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=18ms status=304 bytes=0
+2013-04-22T10:08:50.238378+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+2013-04-22T10:08:50.232340+00:00 app[web.1]: Processing by Devise::SessionsController#new as HTML
+2013-04-22T10:08:50.236966+00:00 app[web.1]:   Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+2013-04-22T10:08:50.229072+00:00 app[web.1]: Started GET "/users/sign_in" for 188.255.86.94 at 2013-04-22 10:08:50 +0000
+2013-04-22T10:08:50.236966+00:00 app[web.1]:   Rendered devise/shared/_links.erb (0.7ms)
+2013-04-22T10:09:03.578975+00:00 app[web.1]: Started GET "/users/sign_up" for 188.255.86.94 at 2013-04-22 10:09:03 +0000
+2013-04-22T10:09:03.619671+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
+2013-04-22T10:09:03.622855+00:00 app[web.1]:   Rendered devise/shared/_links.erb (0.3ms)
+2013-04-22T10:09:03.623973+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+2013-04-22T10:09:03.622855+00:00 app[web.1]:   Rendered devise/registrations/new.html.erb within layouts/application (2.6ms)
+2013-04-22T10:09:03.626449+00:00 heroku[router]: at=info method=GET path=/users/sign_up host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=51ms status=304 bytes=0
+2013-04-22T10:09:32.071487+00:00 app[web.1]: Processing by Devise::SessionsController#new as HTML
+2013-04-22T10:09:32.074374+00:00 app[web.1]:   Rendered devise/shared/_links.erb (0.3ms)
+2013-04-22T10:09:32.074428+00:00 app[web.1]:   Rendered devise/sessions/new.html.erb within layouts/application (2.2ms)
+2013-04-22T10:09:32.075478+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+2013-04-22T10:09:32.068618+00:00 app[web.1]: Started GET "/users/sign_in" for 188.255.86.94 at 2013-04-22 10:09:32 +0000
+2013-04-22T10:09:32.076737+00:00 heroku[router]: at=info method=GET path=/users/sign_in host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=14ms status=304 bytes=0
+2013-04-22T10:09:40.057693+00:00 app[web.1]: Started POST "/users/sign_in" for 188.255.86.94 at 2013-04-22 10:09:40 +0000
+2013-04-22T10:09:40.060979+00:00 app[web.1]: Processing by Devise::SessionsController#create as HTML
+2013-04-22T10:09:40.061038+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"tX50VJODTvfdE3QZ0l1NiacH2h/LT58nXQoqjF10mvs=", "user"=>{"email"=>"saa189@mail.msiu.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+2013-04-22T10:09:40.228587+00:00 app[web.1]: Completed 302 Found in 167ms (ActiveRecord: 0.0ms)
+2013-04-22T10:09:40.228442+00:00 app[web.1]: Redirected to http://fierce-beyond-9931.herokuapp.com/
+2013-04-22T10:09:40.410611+00:00 heroku[router]: at=info method=GET path=/ host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=20ms status=200 bytes=930
+2013-04-22T10:09:40.398648+00:00 app[web.1]: Processing by HomeController#index as HTML
+2013-04-22T10:09:40.403592+00:00 app[web.1]:   Rendered home/index.html.erb within layouts/application (4.3ms)
+2013-04-22T10:09:40.394969+00:00 app[web.1]: Started GET "/" for 188.255.86.94 at 2013-04-22 10:09:40 +0000
+2013-04-22T10:09:40.404892+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 2.5ms)
+2013-04-22T10:09:40.228978+00:00 heroku[router]: at=info method=POST path=/users/sign_in host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=176ms status=302 bytes=106
+2013-04-22T10:09:41.984523+00:00 app[web.1]: Started GET "/users/index" for 188.255.86.94 at 2013-04-22 10:09:41 +0000
+2013-04-22T10:09:41.988707+00:00 app[web.1]: Processing by UsersController#index as HTML
+2013-04-22T10:09:42.007684+00:00 app[web.1]: 
+2013-04-22T10:09:42.007684+00:00 app[web.1]:     24:       <tr>
+2013-04-22T10:09:42.007684+00:00 app[web.1]:     22:   <tbody>
+2013-04-22T10:09:42.007684+00:00 app[web.1]: ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x000000062b2ec8>:0x000000062afe08>):
+2013-04-22T10:09:42.006627+00:00 app[web.1]: Completed 500 Internal Server Error in 17ms
+2013-04-22T10:09:42.007943+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `each'
+2013-04-22T10:09:42.006627+00:00 app[web.1]:   Rendered users/index.html.erb within layouts/application (12.3ms)
+2013-04-22T10:09:42.007684+00:00 app[web.1]:   app/views/users/index.html.erb:25:in `block in _app_views_users_index_html_erb__2151872650306540289_51738020'
+2013-04-22T10:09:42.007684+00:00 app[web.1]:     26:         <td><%= user.email %></td>
+2013-04-22T10:09:42.007943+00:00 app[web.1]: 
+2013-04-22T10:09:42.007684+00:00 app[web.1]:     23:     <% @users.each do |user| %>
+2013-04-22T10:09:42.007684+00:00 app[web.1]:     28:         <td><%= user.reset_password_token %></td>
+2013-04-22T10:09:42.007684+00:00 app[web.1]:     25:         <td><%= link_to user.id, user_path(user) %></td>
+2013-04-22T10:09:42.007684+00:00 app[web.1]:     27:         <td><%= user.encrypted_password %></td>
+2013-04-22T10:09:42.007943+00:00 app[web.1]: 
+2013-04-22T10:09:42.007943+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__2151872650306540289_51738020'
+2013-04-22T10:09:42.010028+00:00 heroku[router]: at=info method=GET path=/users/index host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=59ms status=500 bytes=643
+2013-04-22T10:09:48.485335+00:00 app[web.1]: Started GET "/calculations" for 188.255.86.94 at 2013-04-22 10:09:48 +0000
+2013-04-22T10:09:48.489306+00:00 app[web.1]: Processing by CalculationsController#index as HTML
+2013-04-22T10:09:48.510810+00:00 app[web.1]:   Rendered calculations/index.html.erb within layouts/application (17.5ms)
+2013-04-22T10:09:48.512037+00:00 app[web.1]: Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 2.4ms)
+2013-04-22T10:09:48.513735+00:00 heroku[router]: at=info method=GET path=/calculations host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=33ms status=200 bytes=11689
+2013-04-22T10:09:50.943562+00:00 app[web.1]:     22:   <tbody>
+2013-04-22T10:09:50.924628+00:00 app[web.1]: Started GET "/users/index" for 188.255.86.94 at 2013-04-22 10:09:50 +0000
+2013-04-22T10:09:50.943562+00:00 app[web.1]:     23:     <% @users.each do |user| %>
+2013-04-22T10:09:50.943562+00:00 app[web.1]:     24:       <tr>
+2013-04-22T10:09:50.943562+00:00 app[web.1]: 
+2013-04-22T10:09:50.928343+00:00 app[web.1]: Processing by UsersController#index as HTML
+2013-04-22T10:09:50.943562+00:00 app[web.1]:     26:         <td><%= user.email %></td>
+2013-04-22T10:09:50.943830+00:00 app[web.1]: 
+2013-04-22T10:09:50.943562+00:00 app[web.1]:     27:         <td><%= user.encrypted_password %></td>
+2013-04-22T10:09:50.942146+00:00 app[web.1]: Completed 500 Internal Server Error in 14ms
+2013-04-22T10:09:50.943562+00:00 app[web.1]: ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x000000062b2ec8>:0x00000005219eb8>):
+2013-04-22T10:09:50.943710+00:00 heroku[router]: at=info method=GET path=/users/index host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=23ms status=500 bytes=643
+2013-04-22T10:09:50.942146+00:00 app[web.1]:   Rendered users/index.html.erb within layouts/application (10.4ms)
+2013-04-22T10:09:50.943562+00:00 app[web.1]:     25:         <td><%= link_to user.id, user_path(user) %></td>
+2013-04-22T10:09:50.943562+00:00 app[web.1]:   app/views/users/index.html.erb:25:in `block in _app_views_users_index_html_erb__2151872650306540289_51738020'
+2013-04-22T10:09:50.943830+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `each'
+2013-04-22T10:09:50.943830+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__2151872650306540289_51738020'
+2013-04-22T10:09:50.943562+00:00 
+app[web.1]:     28:         <td><%= user.reset_password_token %></td>
+2013-04-22T10:09:50.943830+00:00 app[web.1]: 
+2013-04-22T10:09:56.560938+00:00 app[web.1]: Started GET "/calculations/new" for 188.255.86.94 at 2013-04-22 10:09:56 +0000
+2013-04-22T10:09:56.614446+00:00 app[web.1]: Processing by CalculationsController#new as HTML
+2013-04-22T10:09:56.637082+00:00 app[web.1]: Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+2013-04-22T10:09:56.635194+00:00 app[web.1]:   Rendered calculations/_form.html.erb (17.8ms)
+2013-04-22T10:09:56.635194+00:00 app[web.1]:   Rendered calculations/new.html.erb within layouts/application (19.6ms)
+2013-04-22T10:09:58.909970+00:00 app[web.1]: Started GET "/calculations" for 188.255.86.94 at 2013-04-22 10:09:58 +0000
+2013-04-22T10:09:58.914004+00:00 app[web.1]: Processing by CalculationsController#index as HTML
+2013-04-22T10:09:58.938204+00:00 heroku[router]: at=info method=GET path=/calculations host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=33ms status=304 bytes=0
+2013-04-22T10:09:58.935992+00:00 app[web.1]:   Rendered calculations/index.html.erb within layouts/application (17.1ms)
+2013-04-22T10:09:58.937361+00:00 app[web.1]: Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 3.0ms)
+2013-04-22T10:10:13.430619+00:00 app[web.1]: Started GET "/users/index" for 188.255.86.94 at 2013-04-22 10:10:13 +0000
+2013-04-22T10:10:13.441206+00:00 app[web.1]: Processing by UsersController#index as HTML
+2013-04-22T10:10:13.540328+00:00 app[web.1]: Completed 500 Internal Server Error in 99ms
+2013-04-22T10:10:13.543898+00:00 app[web.1]:     26:         <td><%= user.email %></td>
+2013-04-22T10:10:13.543898+00:00 app[web.1]: ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x000000062b2ec8>:0x0000000686b478>):
+2013-04-22T10:10:13.543898+00:00 app[web.1]:   app/views/users/index.html.erb:25:in `block in _app_views_users_index_html_erb__2151872650306540289_51738020'
+2013-04-22T10:10:13.544155+00:00 app[web.1]: 
+2013-04-22T10:10:13.543898+00:00 app[web.1]:     22:   <tbody>
+2013-04-22T10:10:13.544155+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `each'
+2013-04-22T10:10:13.544155+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__2151872650306540289_51738020'
+2013-04-22T10:10:13.543898+00:00 app[web.1]:     24:       <tr>
+2013-04-22T10:10:13.543898+00:00 app[web.1]:     27:         <td><%= user.encrypted_password %></td>
+2013-04-22T10:10:13.540066+00:00 app[web.1]:   Rendered users/index.html.erb within layouts/application (94.2ms)
+2013-04-22T10:10:13.543898+00:00 app[web.1]: 
+2013-04-22T10:10:13.543898+00:00 app[web.1]:     23:     <% @users.each do |user| %>
+2013-04-22T10:10:13.543898+00:00 app[web.1]:     25:         <td><%= link_to user.id, user_path(user) %></td>
+2013-04-22T10:10:13.543898+00:00 app[web.1]:     28:         <td><%= user.reset_password_token %></td>
+2013-04-22T10:10:13.544155+00:00 app[web.1]: 
+2013-04-22T10:10:13.545841+00:00 heroku[router]: at=info method=GET path=/users/index host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=117ms status=500 bytes=643
