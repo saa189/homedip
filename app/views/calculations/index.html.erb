@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to calculation.id, calculation_path(calculation) %></td>
         <td><%= calculation.name %></td>
-        <td><%=l calculation.created_at %></td>
+       
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_calculation_path(calculation), :class => 'btn btn-mini' %>

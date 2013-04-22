@@ -1,210 +1,205 @@
 <%= form_for @calculation, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
+    <%= f.label "Название схемы", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :name, :class => 'text_field' %>
     </div>
   </div>
+ 
   <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :user_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :mass_avto, :class => 'control-label' %>
+    <%= f.label "Полная масса автомобиля", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :mass_avto, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :col_avto, :class => 'control-label' %>
+    <%= f.label "Колея автомобиля", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :col_avto, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :height_avto, :class => 'control-label' %>
+    <%= f.label "Высота автомобиля", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :height_avto, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :k_air_sopr, :class => 'control-label' %>
+    <%= f.label "Коэфициент аэродинамического сопротивления", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :k_air_sopr, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :shin_wide, :class => 'control-label' %>
+    <%= f.label "Ширина профиля шины", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :shin_wide, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :shin_height, :class => 'control-label' %>
+    <%= f.label "Высота профиля шины", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :shin_height, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :sit_diam, :class => 'control-label' %>
+    <%= f.label "Посадочный диаметр", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :sit_diam, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :n_e_max, :class => 'control-label' %>
+    <%= f.label "Максимальная мощность двигателя", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :n_e_max, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :m_e_max, :class => 'control-label' %>
+    <%= f.label "Максимальный момент двигателя", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :m_e_max, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :n_N, :class => 'control-label' %>
+    <%= f.label "Обороты двигателя при максимальной мощности", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :n_N, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :n_m, :class => 'control-label' %>
+    <%= f.label "Обороты двигателя при максимальном моменте", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :n_m, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :n_min, :class => 'control-label' %>
+    <%= f.label "Минимальные обороты двигателя", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :n_min, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :n_k, :class => 'control-label' %>
+    <%= f.label "Максимальные обороты двигателя", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :n_k, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :nu_b, :class => 'control-label' %>
+    <%= f.label "Потери на навесное оборудование", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :nu_b, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :nu_t, :class => 'control-label' %>
+    <%= f.label "К.П.Д. трансмиссии", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :nu_t, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uo, :class => 'control-label' %>
+    <%= f.label "Передадочное число главной передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uo, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :n, :class => 'control-label' %>
+    <%= f.label "Количество передач", :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :n, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk1, :class => 'control-label' %>
+    <%= f.label "Передадочное число 1 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk1, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk2, :class => 'control-label' %>
+    <%= f.label "Передадочное число 2 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk2, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk3, :class => 'control-label' %>
+    <%= f.label "Передадочное число 3 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk3, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk4, :class => 'control-label' %>
+    <%= f.label "Передадочное число 4 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk4, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk5, :class => 'control-label' %>
+    <%= f.label "Передадочное число 5 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk5, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk6, :class => 'control-label' %>
+    <%= f.label "Передадочное число 6 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk6, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk7, :class => 'control-label' %>
+    <%= f.label "Передадочное число 7 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk7, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk8, :class => 'control-label' %>
+    <%= f.label "Передадочное число 8 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk8, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk9, :class => 'control-label' %>
+    <%= f.label "Передадочное число 9 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk9, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk10, :class => 'control-label' %>
+    <%= f.label "Передадочное число 10 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk10, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk11, :class => 'control-label' %>
+    <%= f.label "Передадочное число 11 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk11, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk12, :class => 'control-label' %>
+    <%= f.label "Передадочное число 12 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk12, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk13, :class => 'control-label' %>
+    <%= f.label "Передадочное число 13 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk13, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk14, :class => 'control-label' %>
+    <%= f.label "Передадочное число 14 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk14, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :uk15, :class => 'control-label' %>
+    <%= f.label "Передадочное число 15 передачи", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :uk15, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :kroad, :class => 'control-label' %>
+    <%= f.label "Коэфициент сопротивления дороги", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :kroad, :class => 'text_field' %>
     </div>
