@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
+gem 'scruffy', '0.2.6'
+gem 'gruff',"~> 0.3.7"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "i18n", "~> 0.6.1"
