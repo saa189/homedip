@@ -1,102 +1,103 @@
-2013-04-22T10:08:50.242672+00:00 heroku[router]: at=info method=GET path=/users/sign_in host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=18ms status=304 bytes=0
-2013-04-22T10:08:50.238378+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
-2013-04-22T10:08:50.232340+00:00 app[web.1]: Processing by Devise::SessionsController#new as HTML
-2013-04-22T10:08:50.236966+00:00 app[web.1]:   Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
-2013-04-22T10:08:50.229072+00:00 app[web.1]: Started GET "/users/sign_in" for 188.255.86.94 at 2013-04-22 10:08:50 +0000
-2013-04-22T10:08:50.236966+00:00 app[web.1]:   Rendered devise/shared/_links.erb (0.7ms)
-2013-04-22T10:09:03.578975+00:00 app[web.1]: Started GET "/users/sign_up" for 188.255.86.94 at 2013-04-22 10:09:03 +0000
-2013-04-22T10:09:03.619671+00:00 app[web.1]: Processing by Devise::RegistrationsController#new as HTML
-2013-04-22T10:09:03.622855+00:00 app[web.1]:   Rendered devise/shared/_links.erb (0.3ms)
-2013-04-22T10:09:03.623973+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
-2013-04-22T10:09:03.622855+00:00 app[web.1]:   Rendered devise/registrations/new.html.erb within layouts/application (2.6ms)
-2013-04-22T10:09:03.626449+00:00 heroku[router]: at=info method=GET path=/users/sign_up host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=51ms status=304 bytes=0
-2013-04-22T10:09:32.071487+00:00 app[web.1]: Processing by Devise::SessionsController#new as HTML
-2013-04-22T10:09:32.074374+00:00 app[web.1]:   Rendered devise/shared/_links.erb (0.3ms)
-2013-04-22T10:09:32.074428+00:00 app[web.1]:   Rendered devise/sessions/new.html.erb within layouts/application (2.2ms)
-2013-04-22T10:09:32.075478+00:00 app[web.1]: Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
-2013-04-22T10:09:32.068618+00:00 app[web.1]: Started GET "/users/sign_in" for 188.255.86.94 at 2013-04-22 10:09:32 +0000
-2013-04-22T10:09:32.076737+00:00 heroku[router]: at=info method=GET path=/users/sign_in host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=14ms status=304 bytes=0
-2013-04-22T10:09:40.057693+00:00 app[web.1]: Started POST "/users/sign_in" for 188.255.86.94 at 2013-04-22 10:09:40 +0000
-2013-04-22T10:09:40.060979+00:00 app[web.1]: Processing by Devise::SessionsController#create as HTML
-2013-04-22T10:09:40.061038+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"tX50VJODTvfdE3QZ0l1NiacH2h/LT58nXQoqjF10mvs=", "user"=>{"email"=>"saa189@mail.msiu.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
-2013-04-22T10:09:40.228587+00:00 app[web.1]: Completed 302 Found in 167ms (ActiveRecord: 0.0ms)
-2013-04-22T10:09:40.228442+00:00 app[web.1]: Redirected to http://fierce-beyond-9931.herokuapp.com/
-2013-04-22T10:09:40.410611+00:00 heroku[router]: at=info method=GET path=/ host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=20ms status=200 bytes=930
-2013-04-22T10:09:40.398648+00:00 app[web.1]: Processing by HomeController#index as HTML
-2013-04-22T10:09:40.403592+00:00 app[web.1]:   Rendered home/index.html.erb within layouts/application (4.3ms)
-2013-04-22T10:09:40.394969+00:00 app[web.1]: Started GET "/" for 188.255.86.94 at 2013-04-22 10:09:40 +0000
-2013-04-22T10:09:40.404892+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 2.5ms)
-2013-04-22T10:09:40.228978+00:00 heroku[router]: at=info method=POST path=/users/sign_in host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=176ms status=302 bytes=106
-2013-04-22T10:09:41.984523+00:00 app[web.1]: Started GET "/users/index" for 188.255.86.94 at 2013-04-22 10:09:41 +0000
-2013-04-22T10:09:41.988707+00:00 app[web.1]: Processing by UsersController#index as HTML
-2013-04-22T10:09:42.007684+00:00 app[web.1]: 
-2013-04-22T10:09:42.007684+00:00 app[web.1]:     24:       <tr>
-2013-04-22T10:09:42.007684+00:00 app[web.1]:     22:   <tbody>
-2013-04-22T10:09:42.007684+00:00 app[web.1]: ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x000000062b2ec8>:0x000000062afe08>):
-2013-04-22T10:09:42.006627+00:00 app[web.1]: Completed 500 Internal Server Error in 17ms
-2013-04-22T10:09:42.007943+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `each'
-2013-04-22T10:09:42.006627+00:00 app[web.1]:   Rendered users/index.html.erb within layouts/application (12.3ms)
-2013-04-22T10:09:42.007684+00:00 app[web.1]:   app/views/users/index.html.erb:25:in `block in _app_views_users_index_html_erb__2151872650306540289_51738020'
-2013-04-22T10:09:42.007684+00:00 app[web.1]:     26:         <td><%= user.email %></td>
-2013-04-22T10:09:42.007943+00:00 app[web.1]: 
-2013-04-22T10:09:42.007684+00:00 app[web.1]:     23:     <% @users.each do |user| %>
-2013-04-22T10:09:42.007684+00:00 app[web.1]:     28:         <td><%= user.reset_password_token %></td>
-2013-04-22T10:09:42.007684+00:00 app[web.1]:     25:         <td><%= link_to user.id, user_path(user) %></td>
-2013-04-22T10:09:42.007684+00:00 app[web.1]:     27:         <td><%= user.encrypted_password %></td>
-2013-04-22T10:09:42.007943+00:00 app[web.1]: 
-2013-04-22T10:09:42.007943+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__2151872650306540289_51738020'
-2013-04-22T10:09:42.010028+00:00 heroku[router]: at=info method=GET path=/users/index host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=59ms status=500 bytes=643
-2013-04-22T10:09:48.485335+00:00 app[web.1]: Started GET "/calculations" for 188.255.86.94 at 2013-04-22 10:09:48 +0000
-2013-04-22T10:09:48.489306+00:00 app[web.1]: Processing by CalculationsController#index as HTML
-2013-04-22T10:09:48.510810+00:00 app[web.1]:   Rendered calculations/index.html.erb within layouts/application (17.5ms)
-2013-04-22T10:09:48.512037+00:00 app[web.1]: Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 2.4ms)
-2013-04-22T10:09:48.513735+00:00 heroku[router]: at=info method=GET path=/calculations host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=0ms service=33ms status=200 bytes=11689
-2013-04-22T10:09:50.943562+00:00 app[web.1]:     22:   <tbody>
-2013-04-22T10:09:50.924628+00:00 app[web.1]: Started GET "/users/index" for 188.255.86.94 at 2013-04-22 10:09:50 +0000
-2013-04-22T10:09:50.943562+00:00 app[web.1]:     23:     <% @users.each do |user| %>
-2013-04-22T10:09:50.943562+00:00 app[web.1]:     24:       <tr>
-2013-04-22T10:09:50.943562+00:00 app[web.1]: 
-2013-04-22T10:09:50.928343+00:00 app[web.1]: Processing by UsersController#index as HTML
-2013-04-22T10:09:50.943562+00:00 app[web.1]:     26:         <td><%= user.email %></td>
-2013-04-22T10:09:50.943830+00:00 app[web.1]: 
-2013-04-22T10:09:50.943562+00:00 app[web.1]:     27:         <td><%= user.encrypted_password %></td>
-2013-04-22T10:09:50.942146+00:00 app[web.1]: Completed 500 Internal Server Error in 14ms
-2013-04-22T10:09:50.943562+00:00 app[web.1]: ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x000000062b2ec8>:0x00000005219eb8>):
-2013-04-22T10:09:50.943710+00:00 heroku[router]: at=info method=GET path=/users/index host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=23ms status=500 bytes=643
-2013-04-22T10:09:50.942146+00:00 app[web.1]:   Rendered users/index.html.erb within layouts/application (10.4ms)
-2013-04-22T10:09:50.943562+00:00 app[web.1]:     25:         <td><%= link_to user.id, user_path(user) %></td>
-2013-04-22T10:09:50.943562+00:00 app[web.1]:   app/views/users/index.html.erb:25:in `block in _app_views_users_index_html_erb__2151872650306540289_51738020'
-2013-04-22T10:09:50.943830+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `each'
-2013-04-22T10:09:50.943830+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__2151872650306540289_51738020'
-2013-04-22T10:09:50.943562+00:00 
-app[web.1]:     28:         <td><%= user.reset_password_token %></td>
-2013-04-22T10:09:50.943830+00:00 app[web.1]: 
-2013-04-22T10:09:56.560938+00:00 app[web.1]: Started GET "/calculations/new" for 188.255.86.94 at 2013-04-22 10:09:56 +0000
-2013-04-22T10:09:56.614446+00:00 app[web.1]: Processing by CalculationsController#new as HTML
-2013-04-22T10:09:56.637082+00:00 app[web.1]: Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
-2013-04-22T10:09:56.635194+00:00 app[web.1]:   Rendered calculations/_form.html.erb (17.8ms)
-2013-04-22T10:09:56.635194+00:00 app[web.1]:   Rendered calculations/new.html.erb within layouts/application (19.6ms)
-2013-04-22T10:09:58.909970+00:00 app[web.1]: Started GET "/calculations" for 188.255.86.94 at 2013-04-22 10:09:58 +0000
-2013-04-22T10:09:58.914004+00:00 app[web.1]: Processing by CalculationsController#index as HTML
-2013-04-22T10:09:58.938204+00:00 heroku[router]: at=info method=GET path=/calculations host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=33ms status=304 bytes=0
-2013-04-22T10:09:58.935992+00:00 app[web.1]:   Rendered calculations/index.html.erb within layouts/application (17.1ms)
-2013-04-22T10:09:58.937361+00:00 app[web.1]: Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 3.0ms)
-2013-04-22T10:10:13.430619+00:00 app[web.1]: Started GET "/users/index" for 188.255.86.94 at 2013-04-22 10:10:13 +0000
-2013-04-22T10:10:13.441206+00:00 app[web.1]: Processing by UsersController#index as HTML
-2013-04-22T10:10:13.540328+00:00 app[web.1]: Completed 500 Internal Server Error in 99ms
-2013-04-22T10:10:13.543898+00:00 app[web.1]:     26:         <td><%= user.email %></td>
-2013-04-22T10:10:13.543898+00:00 app[web.1]: ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x000000062b2ec8>:0x0000000686b478>):
-2013-04-22T10:10:13.543898+00:00 app[web.1]:   app/views/users/index.html.erb:25:in `block in _app_views_users_index_html_erb__2151872650306540289_51738020'
-2013-04-22T10:10:13.544155+00:00 app[web.1]: 
-2013-04-22T10:10:13.543898+00:00 app[web.1]:     22:   <tbody>
-2013-04-22T10:10:13.544155+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `each'
-2013-04-22T10:10:13.544155+00:00 app[web.1]:   app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__2151872650306540289_51738020'
-2013-04-22T10:10:13.543898+00:00 app[web.1]:     24:       <tr>
-2013-04-22T10:10:13.543898+00:00 app[web.1]:     27:         <td><%= user.encrypted_password %></td>
-2013-04-22T10:10:13.540066+00:00 app[web.1]:   Rendered users/index.html.erb within layouts/application (94.2ms)
-2013-04-22T10:10:13.543898+00:00 app[web.1]: 
-2013-04-22T10:10:13.543898+00:00 app[web.1]:     23:     <% @users.each do |user| %>
-2013-04-22T10:10:13.543898+00:00 app[web.1]:     25:         <td><%= link_to user.id, user_path(user) %></td>
-2013-04-22T10:10:13.543898+00:00 app[web.1]:     28:         <td><%= user.reset_password_token %></td>
-2013-04-22T10:10:13.544155+00:00 app[web.1]: 
-2013-04-22T10:10:13.545841+00:00 heroku[router]: at=info method=GET path=/users/index host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno=web.1 connect=1ms service=117ms status=500 bytes=643
+2013-04-23T11:12:16.065006+00:00 app[web.1]: [2013-04-23 11:12:16] INFO  ruby 1.9.2 (2011-07-09) [x86_64-linux]
+2013-04-23T11:12:16.196102+00:00 heroku[web.1]: State changed from starting to up
+2013-04-23T11:12:17.579391+00:00 app[web.1]: Started GET "/calculations" for 91.241.12.27 at 2013-04-23 11:12:17 +0000
+2013-04-23T11:12:17.728127+00:00 app[web.1]: Processing by CalculationsController#index as HTML
+2013-04-23T11:12:18.449703+00:00 app[web.1]:   Rendered calculations/index.html.erb within layouts/application (28.5ms)
+2013-04-23T11:12:19.504920+00:00 app[web.1]: WARN: tilt autoloading 'sass' in a non thread-safe way; explicit require 'sass' suggested.
+2013-04-23T11:12:20.699883+00:00 app[web.1]: WARN: tilt autoloading 'coffee_script' in a non thread-safe way; explicit require 'coffee_script' suggested.
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled bootstrap_and_overrides.css  (1045ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled home.css  (1ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled calculations.css  (955ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled users.css  (1ms)  (pid 2)
+2013-04-23T11:12:27.099397+00:00 app[web.1]: Completed 200 OK in 9371ms (Views: 8749.9ms | ActiveRecord: 457.0ms)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled jquery.js  (37ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled jquery_ujs.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.101021+00:00 app[web.1]: Compiled twitter/bootstrap.js  (149ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.101021+00:00 app[web.1]: Compiled calculations.js  (1ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.101021+00:00 app[web.1]: Compiled home.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled application.css  (2024ms)  (pid 2)
+2013-04-23T11:12:27.101021+00:00 app[web.1]: Compiled bootstrap.js  (195ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100485+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 2)
+2013-04-23T1
+1:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.101021+00:00 app[web.1]: Compiled application.js  (428ms)  (pid 2)
+2013-04-23T11:12:27.100777+00:00 app[web.1]: Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 2)
+2013-04-23T11:12:27.101021+00:00 app[web.1]: Compiled users.js  (1ms)  (pid 2)
+2013-04-23T11:12:27.269351+00:00 app[web.1]: Started GET "/assets/application-3f0c73bb6dbba13666cae374f79a1aa0.css" for 91.241.12.27 at 2013-04-23 11:12:27 +0000
+2013-04-23T11:12:27.277413+00:00 heroku[router]: at=info method=GET path=/assets/application-3f0c73bb6dbba13666cae374f79a1aa0.css host=fierce-beyond-9931.herokuapp.com fwd="91.241.12.27" dyno=web.1 connect=0ms service=24ms status=304 bytes=0
+2013-04-23T11:12:27.275054+00:00 app[web.1]: Served asset /application-3f0c73bb6dbba13666cae374f79a1aa0.css - 304 Not Modified (0ms)
+2013-04-23T11:12:27.099698+00:00 heroku[router]: at=info method=GET path=/calculations host=fierce-beyond-9931.herokuapp.com fwd="91.241.12.27" dyno=web.1 connect=1ms service=9546ms status=304 bytes=0
+2013-04-23T12:16:01.288355+00:00 heroku[web.1]: Idling
+2013-04-23T12:16:04.512916+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2013-04-23T12:16:05.308909+00:00 app[web.1]: 	/usr/local/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2013-04-23T12:16:05.308909+00:00 app[web.1]: [2013-04-23 12:16:05] ERROR SignalException: SIGTERM
+2013-04-23T12:16:14.009514+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2013-04-23T12:16:14.009514+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2013-04-23T12:16:16.096143+00:00 heroku[web.1]: Process exited with status 137
+2013-04-23T12:16:16.124704+00:00 heroku[web.1]: State changed from up to down
+2013-04-23T14:34:09.529230+00:00 heroku[slugc]: Slug compilation started
+2013-04-23T14:35:11.699454+00:00 heroku[api]: Release v20 created by life4997@mail.ru
+2013-04-23T14:35:11.733928+00:00 heroku[api]: Deploy f9eb314 by life4997@mail.ru
+2013-04-23T14:35:11.811285+00:00 heroku[web.1]: State changed from down to starting
+2013-04-23T14:35:12.309002+00:00 heroku[slugc]: Slug compilation finished
+2013-04-23T14:35:14.037845+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 52210`
+2013-04-23T14:35:18.297098+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:7:in `each'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:53:in `block in <top (required)>'
+2013-04-23T14:35:18.297098+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:7:in `<top (required)>'
+2013-04-23T14:35:18.297098+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:72:in `
+block (2 levels) in require'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:50:in `<top (required)>'
+2013-04-23T14:35:18.297098+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:28:in `require'
+2013-04-23T14:35:18.297098+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:72:in `require'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:70:in `each'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:70:in `block in require'
+2013-04-23T14:35:18.296895+00:00 app[web.1]: /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff/base.rb:2:in `require': no such file to load -- RMagick (LoadError)
+2013-04-23T14:35:18.297098+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:28:in `block in <top (required)>'
+2013-04-23T14:35:18.297098+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff/base.rb:2:in `<top (required)>'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:59:in `each'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler.rb:132:in `require'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:50:in `tap'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/config/application.rb:7:in `<top (required)>'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:59:in `require'
+2013-04-23T14:35:18.297316+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:53:in `require'
+2013-04-23T14:35:18.297558+00:00 app[web.1]: 	from script/rails:6:in `require'
+2013-04-23T14:35:18.297558+00:00 app[web.1]: 	from script/rails:6:in `<main>'
+2013-04-23T14:35:19.679775+00:00 heroku[web.1]: Process exited with status 1
+2013-04-23T14:35:19.695159+00:00 heroku[web.1]: State changed from starting to crashed
+2013-04-23T14:35:19.695159+00:00 heroku[web.1]: State changed from crashed to starting
+2013-04-23T14:35:24.812502+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 9683`
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:28:in `block in <top (required)>'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler.rb:132:in `require'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:72:in `block (2 levels) in require'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/config/application.rb:7:in `<top (required)>'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:70:in `each'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:70:in `block in require'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff/base.rb:2:in `<top (required)>'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff/base.rb:2:in `require': no such file to load -- RMagick (LoadError)
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:28:in `require'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:72:in `require'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:7:in `each'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from script/rails:6:in `require'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:59:in `require'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:53:in `require'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from script/rails:6:in `<main>'
+2013-04-23T14:35:27.528249+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/gruff-0.3.7/lib/gruff.rb:7:in `<top (required)>'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:53:in `block in <top (required)>'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:50:in `tap'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/bundler-1.3.2/lib/bundler/runtime.rb:59:in `each'
+2013-04-23T14:35:27.528591+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.13/lib/rails/commands.rb:50:in `<top (required)>'
+2013-04-23T14:35:28.615594+00:00 heroku[web.1]: State changed from starting to crashed
+2013-04-23T14:35:28.600803+00:00 heroku[web.1]: Process exited with status 1
+2013-04-23T14:38:00.699661+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno= connect= service= status=503 bytes=
+2013-04-23T14:40:11.494322+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno= connect= service= status=503 bytes=
+2013-04-23T14:41:13.073459+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=fierce-beyond-9931.herokuapp.com fwd="188.255.86.94" dyno= connect= service= status=503 bytes=
