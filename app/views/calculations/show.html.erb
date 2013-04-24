@@ -101,7 +101,7 @@
    <strong><%="ne(#{i})"%> : </strong><%=ne[i]=((600)+i*(((1.05*@calculation.n_N)-600)/70))*2*Math::PI/60.0%>
     <%x=(ne[i]/(@calculation.n_N*2*Math::PI/60.0))%>
    <strong><%="N'e(ne)"%> : </strong><%=pNe[i]=@calculation.n_e_max*(a*x+b*x*x-c*x*x*x)%>
-   <strong> <%="Ne(ne)%"%> : </strong><%=nE[i]=pNe[i]*@calculation.nu_b%>
+   <strong> <%="Ne(ne)"%> : </strong><%=nE[i]=pNe[i]*@calculation.nu_b%>
    <strong> <%="M'e(ne)"%> : </strong><%=pMe[i]=pNe[i]*735.49875/(ne[i])%>
    <strong> <%="Me(ne)"%>  : </strong><%=me[i]=nE[i]*735.49875/(ne[i])%>
     <br/>
@@ -109,7 +109,7 @@
 
   <br/>
 <%g = Gruff::Line.new%>
-<%g.title = "My Graph" %>
+<%g.title = "Внешняя скоростная характеристика двигателя" %>
 <%g.data("N'e(ne)", pNe)%>
 <%g.data("Ne(ne)", nE)%>
 <%g.data("M'e(ne)", pMe)%>
