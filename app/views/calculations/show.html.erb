@@ -108,13 +108,14 @@
   <%end%>
 
   <br/>
-<%g = Gruff::Line.new%>
+<%g = Gruff::Line.new('800x700')%>
 <%g.title = "Внешняя скоростная характеристика двигателя" %>
+<%g.title_font_size=25%>
 <%g.data("N'e(ne)", pNe)%>
 <%g.data("Ne(ne)", nE)%>
 <%g.data("M'e(ne)", pMe)%>
 <%g.data("Me(ne)", me)%>
-<%g.labels = {0 => '0', 20 => '20', 40 => '40', 60 => '60', 80 => '70'}%>
+<%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
 <%g.write('public/images/my_fruity_graph.png')%>
 <br/>
 <img alt="Sample App" class="round" src="/images/my_fruity_graph.png" />
