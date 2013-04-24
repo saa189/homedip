@@ -92,7 +92,31 @@
 
 </div>
  <br/>
-
+ <%ne = Array.new%>
+ <%pNe = Array.new%>
+ <%nE = Array.new%>
+ <%pMe = Array.new%>
+ <%me = Array.new%>
+  <% for i in 0..50 %>
+    <%ne[i]=((600)+i*(((1.05*@calculation.n_N)-600)/50))%>
+    <%x=(ne[i]/@calculation.n_N)*2*Math::PI/60.0%>
+    <%pNe[i]=@calculation.n_e_max*(a*x+b*x*x-c*x*x*x)%>
+    <%nE[i]=pNe[i]*@calculation.nu_b%>
+    <%pMe=pNe[i]/(ne[i]*2*Math::PI/60.0)%>
+    <%=me=nE[i]/(ne[i]*2*Math::PI/60.0)%>
+    <br/>
+  <%end%>
+<%g = Gruff::Line.new%>
+<%g.title = "My Graph" %>
+<%g.data("N'e(ne)", pNe)%>
+<%g.data("Ne(ne)", nE)%>
+<%g.data("M'e(ne)", pMe)%>
+<%g.data("Me(ne)", me)%>
+<%g.labels = {0 => '0', 2000 => '2x10^3', 4000 => '4x10^3', 6000 => '6x10^3', 8000 => '8x10^3'}%>
+<%g.write('public/images/my_fruity_graph.png')%>
+<br/>
+<img alt="Sample App" class="round" src="/images/my_fruity_graph.png" />
+<br/> 
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
