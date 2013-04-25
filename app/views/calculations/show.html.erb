@@ -74,7 +74,11 @@
 
 </div>
 
- <h1><%=t '.title', :default => "Расчеты" %></h1>
+ <h1><%=t '.title', :default => "Расчеты:" %></h1>
+
+</br>
+
+  <h1><%=t '.title', :default => "Внешняя скоростная характеристика автомобиля" %></h1>
 
   <br/>
 <div class="dl-horizontal">
@@ -97,6 +101,9 @@
  <%nE = Array.new%>
  <%pMe = Array.new%>
  <%me = Array.new%>
+ <%pk_ne = Array.new%>
+ <%va_ne = Array.new%>
+ <%=rk=2*Math::PI*((@calculation.sit_diam*0.0254)/2+(@calculation.shin_height*@calculation.shin_wide)/100000.0)%>
   <% for i in 0..70 %>
    <strong><%="ne(#{i})"%> : </strong><%=ne[i]=((600)+i*(((1.05*@calculation.n_N)-600)/70))*2*Math::PI/60.0%>
     <%x=(ne[i]/(@calculation.n_N*2*Math::PI/60.0))%>
@@ -104,6 +111,8 @@
    <strong> <%="Ne(ne)"%> : </strong><%=nE[i]=pNe[i]*@calculation.nu_b%>
    <strong> <%="M'e(ne)"%> : </strong><%=pMe[i]=pNe[i]*735.49875/(ne[i])%>
    <strong> <%="Me(ne)"%>  : </strong><%=me[i]=nE[i]*735.49875/(ne[i])%>
+   <%pk_ne[i]=me[i]*@calculation.uk1*@calculation.uo*@calculation.nu_t/rk %> 
+   <%va_ne[i]=ne[i]*rk/(@calculation.uk1*@calculation.uo)%> 
     <br/>
   <%end%>
 
@@ -116,10 +125,31 @@
 <%g.data("M'e(ne)", pMe)%>
 <%g.data("Me(ne)", me)%>
 <%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
-<%g.write('public/images/my_fruity_graph.png')%>
+<%g.write('public/images/int_vel_ch_eng.png')%>
 <br/>
-<img alt="Sample App" class="round" src="/images/my_fruity_graph.png" />
+<img alt="Sample App" class="round" src="/images/int_vel_ch_eng.png" />
 <br/> 
+<br/>
+
+  <h1><%=t '.title', :default => "Силовой баланс автомобиля (для первой передачи)" %></h1>
+  <% for i in 0..70 %>
+  <strong> <%="Pk(#{i})"%>  : </strong><%=pk_ne[i]%>
+   <strong> <%="Va(#{i})"%>  : </strong><%=va_ne[i]%>
+  <br/>
+  <%end%>
+   <br/>
+<%g = Gruff::Line.new('800x700')%>
+<%g.title = "Мощностной баланс авто" %>
+<%g.title_font_size=25%>
+<%g.data("Pk(ne)", pNe)%>
+<%g.data("Va(ne)", nE)%>
+<%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
+<%g.write('public/images/moshn_balance.png')%>
+<br/>
+<img alt="Sample App" class="round" src="/images/moshn_balance.png" />
+<br/> 
+  <br/>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
