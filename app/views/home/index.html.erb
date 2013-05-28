@@ -8,6 +8,11 @@
      </p>
       <%= link_to "Выход", destroy_user_session_path, :method => :delete %>
 <% else %>
-    <%= link_to "Регистрация", new_user_registration_path %> or <%= link_to "Вход", new_user_session_path %>
-   
+
+	<h1 align="center">Добро пожаловать!</h1>
+	<p align="center">
+    <%= link_to "Регистрация", new_user_registration_path %> или <%= link_to "Вход", new_user_session_path %>
+	</p>    
+
 <% end %>
+ <%= stylesheet_link_tag 'custom', :media => 'screen' %>

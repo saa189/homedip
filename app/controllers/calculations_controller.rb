@@ -23,5 +23,8 @@ class CalculationsController < ApplicationController
     @calculation=Calculation.new
   end
   
+  def destroy
+    @calculation = Calculation.find(params[:id]).destroy
+  end
 
 end
