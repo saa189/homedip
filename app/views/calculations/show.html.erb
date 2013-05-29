@@ -2,11 +2,18 @@
 <%- model_class = Calculation -%>
 
 <div class="page-header">
-  <h1><%=t '.title', :default => "Исходные данные" %></h1>
+  <h1><%=t '.title', :default => @calculation.name  %></h1>
 </div>
-
+<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+       Исходные данные
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
 <div class="dl-horizontal">
-  <div><strong><%= "Название схемы" %> : </strong><%= @calculation.name %></div>
+
   
   <div><strong><%= "Полная масса автомобиля" %> : </strong> <%= @calculation.mass_avto %></div>
   
@@ -75,7 +82,9 @@
   <div><strong><%= "Коэфициент сопротивления дороги" %> : </strong><%= @calculation.kroad %></div>
 
 </div>
-
+</div>
+</div>
+</div>
  <h1><%=t '.title', :default => "Расчеты:" %></h1>
 
 </br>
@@ -110,41 +119,15 @@
   <meta charset="utf-8">
 
 
-<div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Collapsible Group Item #1
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
+
   <div class="accordion-group">
     <div class="accordion-heading">
       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Collapsible Group Item #2
+        Таблица внешней скоростной характеристики двигателя
       </a>
     </div>
     <div id="collapseTwo" class="accordion-body collapse">
       <div class="accordion-inner">
-          Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-</div>
-
-    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
-    simple collapsible
-    </button>
-     
-    <div id="demo" class="collapse in"> …asasasasasasasasassdfsdsdsd </div>
-
-
-
  <table class="table table-striped">
   <thead>
     <tr>
@@ -178,6 +161,8 @@
     <%end%>
    </tbody>
  </table>
+    </div>
+  </div>
 
   <br/>
 <%g = Gruff::Line.new('800x700')%>
@@ -190,16 +175,47 @@
 <%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
 <%g.write('public/images/int_vel_ch_eng.png')%>
 <br/>
-<img alt="Sample App" class="round" src="/images/int_vel_ch_eng.png" />
+    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
+    Скрыть/показать график
+    </button>
+     
+    <div id="demo" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/int_vel_ch_eng.png" /></div>
+
+
 <br/> 
 <br/>
 
   <h1><%=t '.title', :default => "Силовой баланс автомобиля (для первой передачи)" %></h1>
+
+ 
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Таблица cилового баланс автомобиля (для первой передачи)
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= "№" %></th>
+
+       <th><%="Pk"%></th>
+       <th><%="Va"%></th>
+    </tr>
+  </thead>
   <% for i in 0..70 %>
-  <strong> <%="Pk(#{i})"%>  : </strong><%=pk_ne[i]%>
-   <strong> <%="Va(#{i})"%>  : </strong><%=va_ne[i]%>
-  <br/>
+   <tr>
+      <td> <%=i%></td>
+      <td> <%=pk_ne[i]%></td>
+      <td><%=va_ne[i]%></td>
+</tr>
+
   <%end%>
+ </table>
+    </div>
+  </div>
+ </div>
    <br/>
 <%g = Gruff::Line.new('800x700')%>
 <%g.title = "Мощностной баланс авто" %>
@@ -209,7 +225,13 @@
 <%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
 <%g.write('public/images/moshn_balance.png')%>
 <br/>
-<img alt="Sample App" class="round" src="/images/moshn_balance.png" />
+ <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo1">
+    Скрыть/показать график
+    </button>
+     
+    <div id="demo1" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/moshn_balance.png" /></div>
+
+
 <br/> 
   <br/>
 
