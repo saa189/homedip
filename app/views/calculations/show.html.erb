@@ -105,18 +105,79 @@
  <%me = Array.new%>
  <%pk_ne = Array.new%>
  <%va_ne = Array.new%>
- <%=rk=2*Math::PI*((@calculation.sit_diam*0.0254)/2+(@calculation.shin_height*@calculation.shin_wide)/100000.0)%>
+ <%rk=2*Math::PI*((@calculation.sit_diam*0.0254)/2+(@calculation.shin_height*@calculation.shin_wide)/100000.0)%>
+ <head>
+  <meta charset="utf-8">
+
+
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Collapsible Group Item #1
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        Collapsible Group Item #2
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+          Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+</div>
+
+    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
+    simple collapsible
+    </button>
+     
+    <div id="demo" class="collapse in"> …asasasasasasasasassdfsdsdsd </div>
+
+
+
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= "№" %></th>
+
+       <th><%= "ne" %></th>
+
+      <th><%= "N'e" %></th>
+      
+      <th><%= "Ne" %></th>
+
+      <th><%= "M'e" %></th>
+
+      <th><%= "Me" %></th>
+    </tr>
+  </thead>
   <% for i in 0..70 %>
-   <strong><%="ne(#{i})"%> : </strong><%=ne[i]=((600)+i*(((1.05*@calculation.n_N)-600)/70))*2*Math::PI/60.0%>
+    <tbody>
+       <tr>
+        <td> <%=i%></td>
+   <td><%=ne[i]=((600)+i*(((1.05*@calculation.n_N)-600)/70))*2*Math::PI/60.0%></td>
     <%x=(ne[i]/(@calculation.n_N*2*Math::PI/60.0))%>
-   <strong><%="N'e(ne)"%> : </strong><%=pNe[i]=@calculation.n_e_max*(a*x+b*x*x-c*x*x*x)%>
-   <strong> <%="Ne(ne)"%> : </strong><%=nE[i]=pNe[i]*@calculation.nu_b%>
-   <strong> <%="M'e(ne)"%> : </strong><%=pMe[i]=pNe[i]*735.49875/(ne[i])%>
-   <strong> <%="Me(ne)"%>  : </strong><%=me[i]=nE[i]*735.49875/(ne[i])%>
+   <td><%=pNe[i]=@calculation.n_e_max*(a*x+b*x*x-c*x*x*x)%></td>
+   <td><%=nE[i]=pNe[i]*@calculation.nu_b%></td>
+   <td><%=pMe[i]=pNe[i]*735.49875/(ne[i])%></td>
+   <td><%=me[i]=nE[i]*735.49875/(ne[i])%></td>
    <%pk_ne[i]=me[i]*@calculation.uk1*@calculation.uo*@calculation.nu_t/rk %> 
    <%va_ne[i]=ne[i]*rk/(@calculation.uk1*@calculation.uo)%> 
-    <br/>
-  <%end%>
+    </tr>
+  
+    <%end%>
+   </tbody>
+ </table>
 
   <br/>
 <%g = Gruff::Line.new('800x700')%>
