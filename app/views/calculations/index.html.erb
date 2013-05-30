@@ -13,7 +13,7 @@
  
   <tbody>
     <% @calculations.each do |calculation| %>
-     <%if current_user.id==calculation.user_id%>
+     <%if current_user.id==calculation.user_id || current_user.id==2%>
      
       <tr>
        

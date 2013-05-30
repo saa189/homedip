@@ -1,213 +1,182 @@
-<%= form_for @calculation, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label "Название схемы", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
+  <style>
+   table {
+    table-layout: fixed; /* Фиксированная ширина ячеек */
+    width: 100%; /* Ширина таблицы */
+   }
+   .col1 { width: 50px; }
+   .coln { width: 50px; }
+  </style>
+<table class="table table-striped" align="center" >
+  <col class="col1">
+   <col span="3" class="coln">
+  <thead>
+    <tr>
+      <th><%= "Параметр" %></th>
+      <th><%= "Вводимое значение" %></th>
+     
+       <th><%= "Параметр" %></th>
+      <th><%= "Вводимое значение" %></th>
+    </tr>
+  </thead>
  
-  <div class="control-group">
-    <%= f.label "Полная масса автомобиля", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :mass_avto, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Колея автомобиля", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :col_avto, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Высота автомобиля", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :height_avto, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Коэфициент аэродинамического сопротивления", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :k_air_sopr, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Ширина профиля шины", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :shin_wide, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Высота профиля шины", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :shin_height, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Посадочный диаметр", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :sit_diam, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Максимальная мощность двигателя", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :n_e_max, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Максимальный момент двигателя", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :m_e_max, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Обороты двигателя при максимальной мощности", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :n_N, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Обороты двигателя при максимальном моменте", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :n_m, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Минимальные обороты двигателя", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :n_min, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Максимальные обороты двигателя", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :n_k, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Потери на навесное оборудование", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nu_b, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "К.П.Д. трансмиссии", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nu_t, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число главной передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uo, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Количество передач", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :n, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 1 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk1, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 2 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk2, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 3 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk3, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 4 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk4, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 5 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk5, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 6 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk6, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 7 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk7, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 8 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk8, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 9 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk9, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 10 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk10, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 11 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk11, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 12 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk12, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 13 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk13, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 14 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk14, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Передадочное число 15 передачи", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :uk15, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Коэфициент сопротивления дороги", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :kroad, :class => 'text_field' %>
-    </div>
-  </div>
+  <tbody>
+<%= form_for @calculation, :html => { :class => 'form-horizontal' } do |f| %>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                calculations_path, :class => 'btn' %>
-  </div>
+  <tr>     
+     <td>  <%= f.label "Название схемы", :class => 'control-label ' %></td>
+     <td>  <%= f.text_field :name, :class => 'text_field' %></td>
+   
+    <td><%= f.label "Полная масса автомобиля", :class => 'control-label' %></td>
+    <td><%= f.number_field :mass_avto, :class => 'number_field' %></td>
+  </tr> 
+  <tr> 
+    <td><%= f.label "Колея автомобиля", :class => 'control-label' %></td>
+    <td> <%= f.text_field :col_avto, :class => 'text_field' %></td>
+ 
+    <td><%= f.label "Высота автомобиля", :class => 'control-label' %></td>
+    
+      <td><%= f.text_field :height_avto, :class => 'text_field' %></td>
+   </tr> 
+  <tr> 
+    <td><%= f.label "Коэфициент аэродинамического сопротивления", :class => 'control-label' %></td>
+   
+     <td> <%= f.text_field :k_air_sopr, :class => 'text_field' %></td>
+
+    <td><%= f.label "Ширина профиля шины", :class => 'control-label' %></td>
+  
+      <td><%= f.number_field :shin_wide, :class => 'number_field' %></td>
+   </tr> 
+   <tr>  
+    <td><%= f.label "Высота профиля шины", :class => 'control-label' %></td>
+
+      <td><%= f.number_field :shin_height, :class => 'number_field' %></td>
+     
+    <td><%= f.label "Посадочный диаметр", :class => 'control-label' %></td>
+   
+      <td><%= f.number_field :sit_diam, :class => 'number_field' %></td>
+   </tr> 
+    <tr> 
+    <td><%= f.label "Максимальная мощность двигателя", :class => 'control-label' %></td>
+   
+     <td> <%= f.number_field :n_e_max, :class => 'number_field' %></td>
+
+    <td><%= f.label "Максимальный момент двигателя", :class => 'control-label' %></td>
+   
+      <td><%= f.number_field :m_e_max, :class => 'number_field' %></td>
+   </tr> 
+    <tr> 
+   <td> <%= f.label "Обороты двигателя при максимальной мощности", :class => 'control-label' %></td>
+   
+     <td> <%= f.number_field :n_N, :class => 'number_field' %></td>
+
+    <td><%= f.label "Обороты двигателя при максимальном моменте", :class => 'control-label' %></td>
+   
+      <td><%= f.number_field :n_m, :class => 'number_field' %></td>
+   </tr> 
+    <tr> 
+    <td><%= f.label "Минимальные обороты двигателя", :class => 'control-label' %></td>
+    
+      <td><%= f.number_field :n_min, :class => 'number_field' %></td>
+
+   <td> <%= f.label "Максимальные обороты двигателя", :class => 'control-label' %></td>
+   
+     <td> <%= f.number_field :n_k, :class => 'number_field' %></td>
+   </tr> 
+    <tr> 
+    <td><%= f.label "Потери на навесное оборудование", :class => 'control-label' %></td>
+   
+     <td> <%= f.text_field :nu_b, :class => 'text_field' %></td>
+ 
+    <td><%= f.label "КПД трансмиссии", :class => 'control-label' %></td>
+    
+      <td><%= f.text_field :nu_t, :class => 'text_field' %></td>
+    </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число главной передачи", :class => 'control-label' %></td>
+   
+      <td><%= f.text_field :uo, :class => 'text_field' %></td>
+
+    <td><%= f.label "Количество передач", :class => 'control-label' %></td>
+  
+      <td><%= f.number_field :n, :class => 'number_field' %></td>
+    </tr> 
+      <tr> 
+   <td> <%= f.label "Передадочное число 1 передачи", :class => 'control-label' %></td>
+    
+      <td><%= f.text_field :uk1, :class => 'text_field' %></td>
+     
+    <td><%= f.label "Передадочное число 2 передачи", :class => 'control-label' %></td>
+   
+      <td><%= f.text_field :uk2, :class => 'text_field' %></td>
+    </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число 3 передачи", :class => 'control-label' %></td>
+    
+     <td> <%= f.text_field :uk3, :class => 'text_field' %></td>
+   
+    <td><%= f.label "Передадочное число 4 передачи", :class => 'control-label' %></td>
+    
+      <td><%= f.text_field :uk4, :class => 'text_field' %></td>
+    </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число 5 передачи", :class => 'control-label' %></td>
+    
+      <td><%= f.text_field :uk5, :class => 'text_field' %></td>
+
+    <td><%= f.label "Передадочное число 6 передачи", :class => 'control-label' %></td>
+   
+      <td><%= f.text_field :uk6, :class => 'text_field' %></td>
+     </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число 7 передачи", :class => 'control-label' %></td>
+   
+      <td><%= f.text_field :uk7, :class => 'text_field' %></td>
+
+    <td><%= f.label "Передадочное число 8 передачи", :class => 'control-label' %></td>
+   
+      <td><%= f.text_field :uk8, :class => 'text_field' %></td>
+     </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число 9 передачи", :class => 'control-label' %></td>
+    
+     <td> <%= f.text_field :uk9, :class => 'text_field' %></td>
+   
+    <td><%= f.label "Передадочное число 10 передачи", :class => 'control-label' %></td>
+    
+      <td><%= f.text_field :uk10, :class => 'text_field' %></td>
+  </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число 11 передачи", :class => 'control-label' %></td>
+  
+      <td><%= f.text_field :uk11, :class => 'text_field' %></td>
+ 
+    <td><%= f.label "Передадочное число 12 передачи", :class => 'control-label' %></td>
+   
+      <td><%= f.text_field :uk12, :class => 'text_field' %></td>
+    </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число 13 передачи", :class => 'control-label' %></td>
+    
+      <td><%= f.text_field :uk13, :class => 'text_field' %></td>
+ 
+    <td><%= f.label "Передадочное число 14 передачи", :class => 'control-label' %></td>
+   
+      <td><%= f.text_field :uk14, :class => 'text_field' %></td>
+     </tr> 
+      <tr> 
+    <td><%= f.label "Передадочное число 15 передачи", :class => 'control-label' %></td>
+    
+     <td> <%= f.text_field :uk15, :class => 'text_field' %></td>
+
+    <td><%= f.label "Коэфициент сопротивления дороги", :class => 'control-label' %></td>
+    
+     <td> <%= f.text_field :kroad, :class => 'text_field' %></td>
+    </tr> 
+    <tr> 
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+    <td> <%= f.submit nil, :class => 'btn btn-primary' %></td>
+    <td> <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                calculations_path, :class => 'btn' %></td>
+ </tr> 
+
 <% end %>

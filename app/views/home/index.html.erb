@@ -1,20 +1,70 @@
-<% if user_signed_in? %>
-   Вы зашли как
-    <%= current_user.email %>.
-     <p align="center">
-     <%= link_to "Создание расчета", new_calculation_path%>
-     <%= link_to "Список расчетов", calculations_path%>
-     <%= link_to "Список пользователей",users_index_path%>
-     </p>
-      <%= link_to "Выход", destroy_user_session_path, :method => :delete %>
-<% else %>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+         
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           
+          <!-- Be sure to leave the brand out there if you want it shown -->
+          <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
+           
+          <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
+          </div>
+         
+        </div>
+      </div>
+    </div>
 
+
+
+
+
+
+
+
+
+<% if user_signed_in? %>
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li class="nav-header">Вы зашли как <%= current_user.email %></li>
+          <li ><a href="/">На главную</a></li>
+          <li><%= link_to "Создание расчета", new_calculation_path%></li>
+          <li><%= link_to "Список расчетов", calculations_path%></li>
+          <li><%= link_to "Список пользователей",users_index_path%></li>
+          <li><a href="#">Информация(скоро)</a></li>
+          <li><a href="#">Литература(скоро)</a></li>
+          <li><%= link_to "Выход", destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </div>
+   
+     <p align="center">
+     
+     </p>
+      
+<% else %>
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li class="nav-header">Войдите или зарегистрируйтесь</li>
+          <li ><a href="/">На главную</a></li>
+          <li><a href="/users/sign_in">Войти</a></li>
+          <li><a href="/users/sign_up">Зарегистрироваться</a></li>
+          <li><a href="#">Информация(скоро)</a></li>
+          <li><a href="#">Литература(скоро)</a></li>
+        </ul>
+      </div>
 	<h1 align="center">Добро пожаловать!</h1>
 	<p align="center">
     <%= link_to "Регистрация", new_user_registration_path %> или <%= link_to "Вход", new_user_session_path %>
 	</p>    
 
 
+ 
  
 
 <% end %>
