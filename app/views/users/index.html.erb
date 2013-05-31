@@ -1,3 +1,40 @@
+     <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+         
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           
+          <!-- Be sure to leave the brand out there if you want it shown -->
+          <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
+           
+          <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+
+   <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li class="nav-header">Вы зашли как <%= current_user.email %></li>
+          <li ><a href="/">На главную</a></li>
+          <li><%= link_to "Создание расчета", new_calculation_path%></li>
+          <li><%= link_to "Список расчетов", calculations_path%></li>
+          <li><%= link_to "Список пользователей",users_index_path%></li>
+          <li><a href="#">Информация(скоро)</a></li>
+          <li><a href="#">Литература(скоро)</a></li>
+          <li><%= link_to "Выход", destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </div>
+       <div class="span9">
 <%- model_class = User -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
@@ -47,6 +84,7 @@
   </tbody>
 </table>
 <%= link_to "назад", home_index_path%>
+</div>
 <!--%= link_to t('.new', :default => t("helpers.links.new")),
             new_user_path,
             :class => 'btn btn-primary' %-->

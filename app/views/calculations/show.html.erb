@@ -1,18 +1,55 @@
+     <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+         
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           
+          <!-- Be sure to leave the brand out there if you want it shown -->
+          <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
+           
+          <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+
+   <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li class="nav-header">Вы зашли как <%= current_user.email %></li>
+          <li ><a href="/">На главную</a></li>
+          <li><%= link_to "Создание расчета", new_calculation_path%></li>
+          <li><%= link_to "Список расчетов", calculations_path%></li>
+          <li><%= link_to "Список пользователей",users_index_path%></li>
+          <li><a href="#">Информация(скоро)</a></li>
+          <li><a href="#">Литература(скоро)</a></li>
+          <li><%= link_to "Выход", destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </div>
+
 <% if current_user.id == @calculation.user_id || current_user.id==2  %>
 <%- model_class = Calculation -%>
 
-<div class="page-header">
+<div class="page-header"align="center">
   <h1><%=t '.title', :default => @calculation.name  %></h1>
 </div>
-<div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+<div class="accordion-group"align="center">
+    <div class="accordion-heading"align="center">
+      <a align="center" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
        Исходные данные
       </a>
     </div>
-    <div id="collapseThree" class="accordion-body collapse">
-      <div class="accordion-inner">
-<div class="dl-horizontal">
+    <div id="collapseThree" class="accordion-body collapse"align="center">
+      <div class="accordion-inner"align="center">
+<div class="dl-horizontal"align="center">
 
   
   <div><strong><%= "Полная масса автомобиля" %> : </strong> <%= @calculation.mass_avto %></div>
@@ -85,14 +122,14 @@
 </div>
 </div>
 </div>
- <h1><%=t '.title', :default => "Расчеты:" %></h1>
+ <h2 align="center"><%=t '.title', :default => "Расчеты:" %></h2>
 
 </br>
 
-  <h1><%=t '.title', :default => "Внешняя скоростная характеристика автомобиля" %></h1>
+  <h2 align="right"><%=t '.title', :default => "Внешняя скоростная характеристика автомобиля" %></h2>
 
   <br/>
-<div class="dl-horizontal">
+<div class="dl-horizontal"align="center">
   <div><strong><%= "Момент максимальной мощности (Mn)" %> : </strong><%=mn=@calculation.n_e_max*1000.0/(@calculation.n_N*2*Math::PI/60.0)  %> Н*м</div>
 
  <% x=(@calculation.n_m+0.0)/@calculation.n_N %>
@@ -120,15 +157,15 @@
 
 
 
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+  <div class="accordion-group"align="center">
+    <div class="accordion-heading"align="center">
+      <a align="center"class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
         Таблица внешней скоростной характеристики двигателя
       </a>
     </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
- <table class="table table-striped">
+    <div id="collapseTwo" class="accordion-body collapse"align="center">
+      <div class="accordion-inner"align="center">
+ <table class="table table-striped"align="center">
   <thead>
     <tr>
       <th><%= "№" %></th>
@@ -179,7 +216,7 @@
     Скрыть/показать график
     </button>
      
-    <div id="demo" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/int_vel_ch_eng.png" /></div>
+    <div align="center"id="demo" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/int_vel_ch_eng.png" /></div>
 
 
 <br/> 
@@ -188,14 +225,14 @@
   <h1><%=t '.title', :default => "Силовой баланс автомобиля (для первой передачи)" %></h1>
 
  
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+    <div class="accordion-heading"align="center">
+      <a align="center"class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
         Таблица cилового баланс автомобиля (для первой передачи)
       </a>
     </div>
-    <div id="collapseOne" class="accordion-body collapse">
-      <div class="accordion-inner">
- <table class="table table-striped">
+    <div align="center"id="collapseOne" class="accordion-body collapse">
+      <div align="center"lass="accordion-inner">
+ <table align="center"class="table table-striped">
   <thead>
     <tr>
       <th><%= "№" %></th>
@@ -225,11 +262,11 @@
 <%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
 <%g.write('public/images/moshn_balance.png')%>
 <br/>
- <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo1">
+ <button align="right"type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo1">
     Скрыть/показать график
     </button>
      
-    <div id="demo1" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/moshn_balance.png" /></div>
+    <div align="center" id="demo1" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/moshn_balance.png" /></div>
 
 
 <br/> 

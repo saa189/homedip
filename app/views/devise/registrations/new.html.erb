@@ -1,19 +1,54 @@
-<h2 align="center">Регистрация</h2>
-<p align="center">
+     <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+         
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           
+          <!-- Be sure to leave the brand out there if you want it shown -->
+          <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
+           
+          <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
+          </div>
+         
+        </div>
+      </div>
+    </div>
+<div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li class="nav-header">Войдите или зарегистрируйтесь</li>
+          <li ><a href="/">На главную</a></li>
+          <li><a href="/users/sign_in">Войти</a></li>
+          <li><a href="/users/sign_up">Зарегистрироваться</a></li>
+          <li><a href="#">Информация(скоро)</a></li>
+          <li><a href="#">Литература(скоро)</a></li>
+        </ul>
+      </div>
+       <div class="span9">
+
+<h2 >Регистрация</h2>
+<p >
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 <p/>
   <%= devise_error_messages! %>
 
-  <div align="center"><%= f.label "Почта" %><br />
+  <div ><%= f.label "Почта" %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div align="center"><%= f.label "Пароль" %><br />
+  <div ><%= f.label "Пароль" %><br />
   <%= f.password_field :password %></div>
 
-  <div align="center"><%= f.label "Подтверждение пароля" %><br />
+  <div ><%= f.label "Подтверждение пароля" %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div align="center"><%= f.submit "Зарегистрироваться" %></div>
+  <div ><%= f.submit "Зарегистрироваться" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

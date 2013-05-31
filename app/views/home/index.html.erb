@@ -43,9 +43,7 @@
         </ul>
       </div>
    
-     <p align="center">
-     
-     </p>
+   
       
 <% else %>
       <div class="span3 bs-docs-sidebar">
@@ -58,14 +56,16 @@
           <li><a href="#">Литература(скоро)</a></li>
         </ul>
       </div>
-	<h1 align="center">Добро пожаловать!</h1>
-	<p align="center">
+       <div class="span9">
+	<h1 >Добро пожаловать!</h1>
+  Сайт был разработан для проведения тягово-динамических расчетов автомобиля, а также для подбора оптимальных характеристик для определенного типа автомобиля. Чтобы приступить к расчетам зайдите или зарегистрируйтесь.
+	<p>
     <%= link_to "Регистрация", new_user_registration_path %> или <%= link_to "Вход", new_user_session_path %>
 	</p>    
 
 
  
- 
+ </div>
 
 <% end %>
  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
