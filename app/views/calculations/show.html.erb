@@ -1,42 +1,27 @@
-     <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-         
-          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-           
-          <!-- Be sure to leave the brand out there if you want it shown -->
-          <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
-           
-          <!-- Everything you want hidden at 940px or less, place within here -->
-          <div class="nav-collapse collapse">
-          <!-- .nav, .navbar-search, .navbar-form, etc -->
-          </div>
-         
-        </div>
-      </div>
-    </div>
 
-
-   <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-          <li class="nav-header">Вы зашли как <%= current_user.email %></li>
-          <li ><a href="/">На главную</a></li>
-          <li><%= link_to "Создание расчета", new_calculation_path%></li>
-          <li><%= link_to "Список расчетов", calculations_path%></li>
-          <li><%= link_to "Список пользователей",users_index_path%></li>
-          <li><a href="#">Информация(скоро)</a></li>
-          <li><a href="#">Литература(скоро)</a></li>
-          <li><%= link_to "Выход", destroy_user_session_path, :method => :delete %></li>
-        </ul>
-      </div>
 
 <% if current_user.id == @calculation.user_id || current_user.id==2  %>
 <%- model_class = Calculation -%>
+<div class="bs-docs-example">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
+                <ul class="nav">
+                  <li class="active"><a href="/">На главную</a></li>
+                   <li><%= link_to "Создание расчета", new_calculation_path%></li>
+                  <li><%= link_to "Список пользователей",users_index_path%></li>
+                   <li><%= link_to "Список расчетов", calculations_path%></li>
+                  <li  class="dropdown">
+                   <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Доплнительно <span class="caret"></span></button>
+                     <ul class="dropdown-menu">
+                      <li><a href="#">Информация(скоро)</a></li>
+                      <li><a href="#">Литература(скоро)</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
 <div class="page-header"align="center">
   <h1><%=t '.title', :default => @calculation.name  %></h1>
@@ -122,16 +107,18 @@
 </div>
 </div>
 </div>
+<%if  !@calculation.n_e_max.blank? || !@calculation.n_N.blank? || !@calculation.n_e_max.blank?%>
  <h2 align="center"><%=t '.title', :default => "Расчеты:" %></h2>
 
 </br>
 
-  <h2 align="right"><%=t '.title', :default => "Внешняя скоростная характеристика автомобиля" %></h2>
+  <h2 align="center"><%=t '.title', :default => "Внешняя скоростная характеристика автомобиля" %></h2>
 
   <br/>
 <div class="dl-horizontal"align="center">
-  <div><strong><%= "Момент максимальной мощности (Mn)" %> : </strong><%=mn=@calculation.n_e_max*1000.0/(@calculation.n_N*2*Math::PI/60.0)  %> Н*м</div>
 
+  <div><strong><%= "Момент максимальной мощности (Mn)" %> : </strong><%=mn=@calculation.n_e_max*1000.0/(@calculation.n_N*2*Math::PI/60.0)  %> Н*м</div>
+<%if !@calculation.m_e_max.blank?%>
  <% x=(@calculation.n_m+0.0)/@calculation.n_N %>
  <% k=@calculation.m_e_max/mn %>
  <% c = (1-k)/(2*x-(x*x)-1)   %>  
@@ -212,11 +199,11 @@
 <%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
 <%g.write('public/images/int_vel_ch_eng.png')%>
 <br/>
-    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
+    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo2">
     Скрыть/показать график
     </button>
      
-    <div align="center"id="demo" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/int_vel_ch_eng.png" /></div>
+    <div align="center"id="demo2" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/int_vel_ch_eng.png" /></div>
 
 
 <br/> 
@@ -262,17 +249,19 @@
 <%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
 <%g.write('public/images/moshn_balance.png')%>
 <br/>
- <button align="right"type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo1">
+<p align="center">
+ <button align="center" type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo1">
     Скрыть/показать график
-    </button>
+ </button>
      
-    <div align="center" id="demo1" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/moshn_balance.png" /></div>
-
+    <div  align="center" id="demo1" class="collapse in"><br/> <img alt="Sample App" class="round" src="/images/moshn_balance.png" /></div>
+</p>
 
 <br/> 
   <br/>
 
-
+  <%end%>
+<%end%>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("Назад")),
               calculations_path, :class => 'btn'  %>
@@ -285,6 +274,26 @@
               :class => 'btn btn-danger' %>
 </div>
 <% else %>
+<div class="bs-docs-example">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
+                <ul class="nav">
+                  <li class="active"><a href="/">На главную</a></li>
+                   <li><%= link_to "Создание расчета", new_calculation_path%></li>
+                  <li><%= link_to "Список пользователей",users_index_path%></li>
+                   <li><%= link_to "Список расчетов", calculations_path%></li>
+                  <li  class="dropdown">
+                   <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Доплнительно <span class="caret"></span></button>
+                     <ul class="dropdown-menu">
+                      <li><a href="#">Информация(скоро)</a></li>
+                      <li><a href="#">Литература(скоро)</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
 Необходимо быть создателем расчета.
 </br>
 <%= link_to t('.back', :default => t("Назад")),

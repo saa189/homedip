@@ -1,39 +1,23 @@
-     <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-         
-          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-           
-          <!-- Be sure to leave the brand out there if you want it shown -->
-          <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
-           
-          <!-- Everything you want hidden at 940px or less, place within here -->
-          <div class="nav-collapse collapse">
-          <!-- .nav, .navbar-search, .navbar-form, etc -->
+<div class="bs-docs-example">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <a class="brand" href="#">Расчет тягово-динамических характеристик автомобиля</a>
+                <ul class="nav">
+                  <li class="active"><a href="/">На главную</a></li>
+                   <li><%= link_to "Создание расчета", new_calculation_path%></li>
+                  <li><%= link_to "Список пользователей",users_index_path%></li>
+                   <li><%= link_to "Список расчетов", calculations_path%></li>
+                  <li  class="dropdown">
+                   <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Доплнительно <span class="caret"></span></button>
+                     <ul class="dropdown-menu">
+                      <li><a href="#">Информация(скоро)</a></li>
+                      <li><a href="#">Литература(скоро)</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-         
-        </div>
-      </div>
-    </div>
-
-
-   <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-          <li class="nav-header">Вы зашли как <%= current_user.email %></li>
-          <li ><a href="/">На главную</a></li>
-          <li><%= link_to "Создание расчета", new_calculation_path%></li>
-          <li><%= link_to "Список расчетов", calculations_path%></li>
-          <li><%= link_to "Список пользователей",users_index_path%></li>
-          <li><a href="#">Информация(скоро)</a></li>
-          <li><a href="#">Литература(скоро)</a></li>
-          <li><%= link_to "Выход", destroy_user_session_path, :method => :delete %></li>
-        </ul>
-      </div>
 
 
      
