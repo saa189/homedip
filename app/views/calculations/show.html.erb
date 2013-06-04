@@ -121,12 +121,24 @@
 <%if !@calculation.m_e_max.blank?%>
  <% x=(@calculation.n_m+0.0)/@calculation.n_N %>
  <% k=@calculation.m_e_max/mn %>
- <% c = (1-k)/(2*x-(x*x)-1)   %>  
+ <% c = (1-k)/(2*x-(x*x)-1)   %> 
+ <% kB = @calculation.k_air_sopr*1.225/2 %>
+  <% fa= @calculation.col_avto*@calculation.height_avto   %> 
+  <div><strong><%= "Площадь лобового сечения транспортного средства Fa" %> : </strong><%= fa  %><%=" м"%><sup>2</sup> </div>  
+  <div><strong><%= "Ширина профиля шины Bsh" %> : </strong><%= @calculation.shin_wide   %><%=" мм"%></div>
+   <div><strong><%= "Высота профиля шины Hsh" %> : </strong><%= h_sh=@calculation.shin_height*@calculation.shin_wide/100.0   %><%=" мм"%></div>
+   <div><strong><%= "Плотность воздуха " %>&rho; :  </strong><%="1.225 кг/м"%><sup>3</sup></div>
+
+   <div><strong><%= "Коэфициент сопротивления воздуха k" %><sub>B</sub>  : </strong><%= kB   %></div> 
+   <div><strong><%= "Посадочный диаметр d" %> : </strong><%= @calculation.sit_diam  %>&uml;</div>
+   <div><strong><%= "Наружный диаметр колеса D" %> : </strong><%= n_D= 25.4*@calculation.sit_diam+2*h_sh %><%=" мм"%>  </div> 
+   <div><strong><%= "Статический радиус r" %><sub>c</sub> : </strong><%= rc=0.5*n_D  %><%=" мм"%></div> 
 <div><strong><%= "Коэфициент а" %> : </strong><%= a = k-c*x*x   %></div> 
 
 <div><strong><%= "Коэфициент b" %> : </strong><%= b = 2*c*x   %></div> 
 
 <div><strong><%= "Коэфициент с" %> : </strong><%= c   %></div> 
+
 
 
 </div>
