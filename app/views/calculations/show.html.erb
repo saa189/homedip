@@ -117,27 +117,135 @@
   <br/>
 <div class="dl-horizontal"align="center">
 
-  <div><strong><%= "Момент максимальной мощности (Mn)" %> : </strong><%=mn=@calculation.n_e_max*1000.0/(@calculation.n_N*2*Math::PI/60.0)  %> Н*м</div>
-<%if !@calculation.m_e_max.blank?%>
- <% x=(@calculation.n_m+0.0)/@calculation.n_N %>
- <% k=@calculation.m_e_max/mn %>
- <% c = (1-k)/(2*x-(x*x)-1)   %> 
- <% kB = @calculation.k_air_sopr*1.225/2 %>
-  <% fa= @calculation.col_avto*@calculation.height_avto   %> 
-  <div><strong><%= "Площадь лобового сечения транспортного средства Fa" %> : </strong><%= fa  %><%=" м"%><sup>2</sup> </div>  
-  <div><strong><%= "Ширина профиля шины Bsh" %> : </strong><%= @calculation.shin_wide   %><%=" мм"%></div>
-   <div><strong><%= "Высота профиля шины Hsh" %> : </strong><%= h_sh=@calculation.shin_height*@calculation.shin_wide/100.0   %><%=" мм"%></div>
-   <div><strong><%= "Плотность воздуха " %>&rho; :  </strong><%="1.225 кг/м"%><sup>3</sup></div>
+  
 
-   <div><strong><%= "Коэфициент сопротивления воздуха k" %><sub>B</sub>  : </strong><%= kB   %></div> 
-   <div><strong><%= "Посадочный диаметр d" %> : </strong><%= @calculation.sit_diam  %>&uml;</div>
-   <div><strong><%= "Наружный диаметр колеса D" %> : </strong><%= n_D= 25.4*@calculation.sit_diam+2*h_sh %><%=" мм"%>  </div> 
-   <div><strong><%= "Статический радиус r" %><sub>c</sub> : </strong><%= rc=0.5*n_D  %><%=" мм"%></div> 
-<div><strong><%= "Коэфициент а" %> : </strong><%= a = k-c*x*x   %></div> 
 
-<div><strong><%= "Коэфициент b" %> : </strong><%= b = 2*c*x   %></div> 
 
-<div><strong><%= "Коэфициент с" %> : </strong><%= c   %></div> 
+
+
+<div class="accordion-group"align="center">
+    <div class="accordion-heading"align="center">
+      <a align="center"class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+        Расчет некоторых параметров
+      </a>
+    </div>
+    <div id="collapse3" class="accordion-body collapse"align="center">
+        <div class="accordion-inner"align="center">
+           <table class="table table-striped"align="center">
+                <thead>
+                  <tr>
+                    <th><%= "Параметр"%></th>
+                    <th><%= "Значение" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                        <%if !@calculation.m_e_max.blank?%>
+                                <%mn=@calculation.n_e_max*1000.0/(@calculation.n_N*2*Math::PI/60.0)  %>
+                                <% x=(@calculation.n_m+0.0)/@calculation.n_N %>
+                                <% k=@calculation.m_e_max/mn %>
+                                <% c = (1-k)/(2*x-(x*x)-1)   %>
+                                
+                        <tr>
+                            <td> <%= "Ширина профиля шины Bsh" %> </td>
+                            <td> <%= fa=@calculation.col_avto*@calculation.height_avto  %><%=" м"%></td>
+                        </tr>
+                        <tr>
+                            <td> <%= "Площадь лобового сечения транспортного средства (Fa)" %> </td>
+                            <td> <%= @calculation.shin_wide   %><%=" мм"%></td>
+                        </tr>
+                        <tr>
+                            <td> <%= "Высота профиля шины (Hsh)" %> </td>
+                            <td> <%= h_sh=@calculation.shin_height*@calculation.shin_wide/100.0   %><%=" мм"%></td>
+                        </tr>
+                         <tr>
+                            <td> <%= "Плотность воздуха (" %>&rho;) </td>
+                            <td> <%=rho=1.225%><%=" кг/м"%><sup>3</sup></td>
+                        </tr>    
+                        <tr>
+                            <td> <%= "Коэфициент сопротивления воздуха (k" %><sub>B</sub>)  </td>
+                            <td> <%= kB = @calculation.k_air_sopr*1.225/2   %></td>
+                        </tr>   
+                        <tr>
+                            <td> <%= "Посадочный диаметр (d)" %> </td>
+                            <td> <%= @calculation.sit_diam  %>&uml;</td>
+                        </tr>   
+                        <tr>
+                            <td> <%= "Наружный диаметр колеса (D)" %> </td>
+                            <td><%= n_D= 25.4*@calculation.sit_diam+2*h_sh %><%=" мм"%>  </td>
+                        </tr>   
+                        <tr>
+                            <td> <%= "Статический радиус (r" %><sub>c</sub> ) </td>
+                            <td><%= rc=0.5*n_D  %><%=" мм"%>  </td>
+                        </tr>  
+                        <tr>
+                            <td> <%= "Нормальный прогиб шины (h" %><sub>z</sub> ) </td>
+                            <td><%= hz=0.12*h_sh   %><%=" мм"%>  </td>
+                        </tr>     
+                        <tr>
+                            <td> <%= "Динамический радиус колеса (r" %><sub>d</sub> ) </td>
+                            <td><%= rd=(rc-hz)/1000   %><%=" м"%> </td>
+                        </tr>  
+                        <tr>
+                            <td> <%= "Кинематический радиус (r" %><sub>k</sub> ) </td>
+                            <td><%= rk=(3*rc/(rc/(rc-hz)+2))/1000   %><%=" м"%> </td>
+                        </tr> 
+                        <tr>
+                            <td> <%= "Минимальные-максимальные обороты двигателя (n" %><sub>e_min</sub>-<%= " n" %><sub>e_max</sub> ) </td>
+                            <td><%= @calculation.n_min   %>-<%=@calculation.n_k%><%=" об/мин"%></td>
+                        </tr>       
+                        <tr>
+                            <td> <%= "Коэфициент " %>&phi; </td>
+                            <td><%= phi=0.8   %></td>
+                        </tr> 
+                        <tr>
+                            <td> <%= "Коэфициент k" %><sub>SC</sub></td>
+                            <td><%= ksc=1   %></td>
+                        </tr> 
+                                          
+                </tbody>
+          </table>
+        </div>
+    </div>       
+
+ <h2 align="center"><%=t '.title', :default => "Внешняя скоростная характеристика автомобиля" %></h2>
+ <div class="accordion-group"align="center">
+    <div class="accordion-heading"align="center">
+      <a align="center"class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+        Расчет внешних скоростных характеристик автомобиля
+      </a>
+    </div>
+    <div id="collapse4" class="accordion-body collapse"align="center">
+        <div class="accordion-inner"align="center">
+           <table class="table table-striped"align="center">
+                <thead>
+                  <tr>
+                    <th><%= "Параметр"%></th>
+                    <th><%= "Значение" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td> <%= "Момент максимальной мощности (Mn)" %> </td>
+                            <td> <%=mn  %> Н*м</td>
+                        </tr>
+                        <tr>
+                            <td> <%= "Коэфициент а" %> </td>
+                            <td><%= a = k-c*x*x   %></td>
+                        </tr>       
+                        <tr>
+                            <td> <%= "Коэфициент b" %>  </td>
+                            <td><%= b = 2*c*x   %></td>
+                        </tr>   
+                        <tr>
+                            <td> <%= "Коэфициент с" %>  </td>
+                            <td><%= c   %></td>
+                        </tr>  
+          </tbody>
+          </table>
+        </div>
+    </div>   
+
+ 
 
 
 
@@ -150,10 +258,9 @@
  <%me = Array.new%>
  <%pk_ne = Array.new%>
  <%va_ne = Array.new%>
- <%rk=2*Math::PI*((@calculation.sit_diam*0.0254)/2+(@calculation.shin_height*@calculation.shin_wide)/100000.0)%>
+ 
  <head>
   <meta charset="utf-8">
-
 
 
   <div class="accordion-group"align="center">
@@ -184,12 +291,12 @@
     <tbody>
        <tr>
         <td> <%=i%></td>
-   <td><%=ne[i]=((600)+i*(((1.05*@calculation.n_N)-600)/70))*2*Math::PI/60.0%></td>
-    <%x=(ne[i]/(@calculation.n_N*2*Math::PI/60.0))%>
-   <td><%=pNe[i]=@calculation.n_e_max*(a*x+b*x*x-c*x*x*x)%></td>
+   <td><%=ne[i]=((@calculation.n_min)+i*(((1.05*@calculation.n_k-@calculation.n_min))/70))%></td>
+    <%x=(ne[i]/(1.05*@calculation.n_k))%>
+   <td><%=pNe[i]=@calculation.n_e_max*(1*x+1*x*x-1*x*x*x)%></td>
    <td><%=nE[i]=pNe[i]*@calculation.nu_b%></td>
-   <td><%=pMe[i]=pNe[i]*735.49875/(ne[i])%></td>
-   <td><%=me[i]=nE[i]*735.49875/(ne[i])%></td>
+   <td><%=pMe[i]=pNe[i]*9550/(ne[i])%></td>
+   <td><%=me[i]=nE[i]*9550/(ne[i])%></td>
    <%pk_ne[i]=me[i]*@calculation.uk1*@calculation.uo*@calculation.nu_t/rk %> 
    <%va_ne[i]=ne[i]*rk/(@calculation.uk1*@calculation.uo)%> 
     </tr>
