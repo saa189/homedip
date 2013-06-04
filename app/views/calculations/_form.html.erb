@@ -25,120 +25,120 @@
 
   <tr>     
      <td>  <%= f.label "Название схемы", :class => 'control-label ' %></td>
-     <td>  <%= f.text_field :name, :class => 'text_field' %></td>
-     <td><%= f.label "Полная масса автомобиля", :class => 'control-label' %></td>
-     <td><%= f.number_field :mass_avto, :class => 'number_field' %></td>
-     <td><%= f.label "Колея автомобиля", :class => 'control-label' %></td>
-     <td> <%= f.text_field :col_avto, :class => 'text_field' %></td>
+     <td>  <%= f.text_field :name, :class => 'text_field', :value => "Имя" %></td>
+     <td><%= f.label "Полная масса автомобиля, кг", :class => 'control-label' %></td>
+     <td><%= f.number_field :mass_avto, :class => 'number_field', :value => "1500"%></td>
+     <td><%= f.label "Колея автомобиля, м", :class => 'control-label' %></td>
+     <td> <%= f.text_field :col_avto, :class => 'text_field' , :value => "1.466"%></td>
   </tr> 
   <tr> 
-    <td><%= f.label "Высота автомобиля", :class => 'control-label' %></td>
-    <td><%= f.text_field :height_avto, :class => 'text_field' %></td>
+    <td><%= f.label "Высота автомобиля, м", :class => 'control-label' %></td>
+    <td><%= f.text_field :height_avto, :class => 'text_field' , :value => "1.4"%></td>
     <td><%= f.label "Коэфициент аэродинамического сопротивления", :class => 'control-label' %></td>
-    <td> <%= f.text_field :k_air_sopr, :class => 'text_field' %></td>
-    <td><%= f.label "Ширина профиля шины", :class => 'control-label' %></td>
-    <td><%= f.number_field :shin_wide, :class => 'number_field' %></td>
+    <td> <%= f.text_field :k_air_sopr, :class => 'text_field', :value => "0.35" %></td>
+    <td><%= f.label "Ширина профиля шины, мм", :class => 'control-label' %></td>
+    <td><%= f.number_field :shin_wide, :class => 'number_field',:value => "205" %></td>
   </tr> 
   <tr> 
-    <td><%= f.label "Высота профиля шины", :class => 'control-label' %></td>
-    <td><%= f.number_field :shin_height, :class => 'number_field' %></td>
-    <td><%= f.label "Посадочный диаметр", :class => 'control-label' %></td>
-    <td><%= f.number_field :sit_diam, :class => 'number_field' %></td>
+    <td><%= f.label "Высота профиля шины, %", :class => 'control-label' %></td>
+    <td><%= f.number_field :shin_height, :class => 'number_field',:value => "55" %></td>
+    <td><%= f.label "Посадочный диаметр, дюйм", :class => 'control-label' %></td>
+    <td><%= f.number_field :sit_diam, :class => 'number_field', :value => "15"%></td>
  
-    <td><%= f.label "Максимальная мощность двигателя", :class => 'control-label' %></td>
+    <td><%= f.label "Максимальная мощность двигателя, кВт", :class => 'control-label' %></td>
    
-     <td> <%= f.number_field :n_e_max, :class => 'number_field' %></td>
+     <td> <%= f.number_field :n_e_max, :class => 'number_field',:value => "160" %></td>
   </tr> 
     <tr> 
-        <td><%= f.label "Максимальный момент двигателя", :class => 'control-label' %></td>
+        <td><%= f.label "Максимальный момент двигателя, Н*м", :class => 'control-label' %></td>
        
-          <td><%= f.number_field :m_e_max, :class => 'number_field' %></td>
+          <td><%= f.number_field :m_e_max, :class => 'number_field', :value => "225"%></td>
        
-       <td> <%= f.label "Обороты двигателя при максимальной мощности", :class => 'control-label' %></td>
+       <td> <%= f.label "Обороты двигателя при максимальной мощности, об/мин", :class => 'control-label' %></td>
        
-         <td> <%= f.number_field :n_N, :class => 'number_field' %></td>
+         <td> <%= f.number_field :n_N, :class => 'number_field',:value => "5600" %></td>
  
-        <td><%= f.label "Обороты двигателя при максимальном моменте", :class => 'control-label' %></td>
+        <td><%= f.label "Обороты двигателя при максимальном моменте, об/мин", :class => 'control-label' %></td>
        
-          <td><%= f.number_field :n_m, :class => 'number_field' %></td>
+          <td><%= f.number_field :n_m, :class => 'number_field',:value => "3600" %></td>
   </tr> 
     <tr>
-        <td><%= f.label "Минимальные обороты двигателя", :class => 'control-label' %></td>
+        <td><%= f.label "Минимальные обороты двигателя, об/мин", :class => 'control-label' %></td>
         
-          <td><%= f.number_field :n_min, :class => 'number_field' %></td>
+          <td><%= f.number_field :n_min, :class => 'number_field',:value => "750" %></td>
 
-       <td> <%= f.label "Максимальные обороты двигателя", :class => 'control-label' %></td>
+       <td> <%= f.label "Максимальные обороты двигателя, об/мин", :class => 'control-label' %></td>
        
-         <td> <%= f.number_field :n_k, :class => 'number_field' %></td>
+         <td> <%= f.number_field :n_k, :class => 'number_field',:value => "7000" %></td>
    
         <td><%= f.label "Потери на навесное оборудование", :class => 'control-label' %></td>
        
-         <td> <%= f.text_field :nu_b, :class => 'text_field' %></td>
+         <td> <%= f.text_field :nu_b, :class => 'text_field',:value => "0.85" %></td>
      </tr> 
     <tr> 
         <td><%= f.label "КПД трансмиссии", :class => 'control-label' %></td>
         
-          <td><%= f.text_field :nu_t, :class => 'text_field' %></td>
+          <td><%= f.text_field :nu_t, :class => 'text_field',:value => "0.9" %></td>
 
         <td><%= f.label "Передадочное число главной передачи", :class => 'control-label' %></td>
        
-          <td><%= f.text_field :uo, :class => 'text_field' %></td>
+          <td><%= f.text_field :uo, :class => 'text_field',:value => "3.945" %></td>
   
           <td><%= f.label "Количество передач", :class => 'control-label' %></td>
         
-            <td><%= f.number_field :n, :class => 'number_field' %></td>
+            <td><%= f.number_field :n, :class => 'number_field',:value => "5" %></td>
      </tr> 
       <tr> 
          <td> <%= f.label "Передадочное число 1 передачи", :class => 'control-label' %></td>
           
-            <td><%= f.text_field :uk1, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk1, :class => 'text_field',:value => "2.106" %></td>
            
           <td><%= f.label "Передадочное число 2 передачи", :class => 'control-label' %></td>
          
-            <td><%= f.text_field :uk2, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk2, :class => 'text_field',:value => "1.341" %></td>
 
           <td><%= f.label "Передадочное число 3 передачи", :class => 'control-label' %></td>
           
-           <td> <%= f.text_field :uk3, :class => 'text_field' %></td>
+           <td> <%= f.text_field :uk3, :class => 'text_field',:value => "0.972" %></td>
       </tr> 
       <tr>    
           <td><%= f.label "Передадочное число 4 передачи", :class => 'control-label' %></td>
           
-            <td><%= f.text_field :uk4, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk4, :class => 'text_field' ,:value => "0.796"%></td>
    
           <td><%= f.label "Передадочное число 5 передачи", :class => 'control-label' %></td>
           
-            <td><%= f.text_field :uk5, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk5, :class => 'text_field',:value => "0.7" %></td>
 
           <td><%= f.label "Передадочное число 6 передачи", :class => 'control-label' %></td>
          
-            <td><%= f.text_field :uk6, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk6, :class => 'text_field',:value => "0.796" %></td>
        </tr> 
       <tr> 
           <td><%= f.label "Передадочное число 7 передачи", :class => 'control-label' %></td>
          
-            <td><%= f.text_field :uk7, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk7, :class => 'text_field',:value => "0.796" %></td>
 
           <td><%= f.label "Передадочное число 8 передачи", :class => 'control-label' %></td>
          
-            <td><%= f.text_field :uk8, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk8, :class => 'text_field',:value => "0.796" %></td>
          
           <td><%= f.label "Передадочное число 9 передачи", :class => 'control-label' %></td>
           
-           <td> <%= f.text_field :uk9, :class => 'text_field' %></td>
+           <td> <%= f.text_field :uk9, :class => 'text_field',:value => "0.796" %></td>
      </tr> 
       <tr> 
           <td><%= f.label "Передадочное число 10 передачи", :class => 'control-label' %></td>
           
-            <td><%= f.text_field :uk10, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk10, :class => 'text_field',:value => "0.796" %></td>
          
           <td><%= f.label "Передадочное число 11 передачи", :class => 'control-label' %></td>
         
-            <td><%= f.text_field :uk11, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk11, :class => 'text_field',:value => "0.796" %></td>
  
           <td><%= f.label "Передадочное число 12 передачи", :class => 'control-label' %></td>
          
-            <td><%= f.text_field :uk12, :class => 'text_field' %></td>
+            <td><%= f.text_field :uk12, :class => 'text_field' ,:value => "0.796"%></td>
       </tr> 
       <tr>        
           <td><%= f.label "Передадочное число 13 передачи", :class => 'control-label' %></td>
