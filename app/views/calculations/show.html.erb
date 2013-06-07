@@ -258,12 +258,30 @@
  <%me = Array.new%>
  <%pk_ne = Array.new%>
  <%va_ne = Array.new%>
- 
+ <%pk_n = Array.new%>
+ <%va_n = Array.new%>
+  <%uk = Array.new%>
+  <%uk[0]=@calculation.uo%>
+  <%uk[1]=@calculation.uk1%>
+  <%uk[2]=@calculation.uk2%>
+  <%uk[3]=@calculation.uk3%>
+  <%uk[4]=@calculation.uk4%>
+  <%uk[5]=@calculation.uk5%>
+  <%uk[6]=@calculation.uk6%>
+  <%uk[7]=@calculation.uk7%>
+  <%uk[8]=@calculation.uk8%>
+  <%uk[9]=@calculation.uk9%>
+  <%uk[10]=@calculation.uk10%>
+  <%uk[11]=@calculation.uk11%>
+  <%uk[12]=@calculation.uk12%>
+  <%uk[13]=@calculation.uk13%>
+  <%uk[14]=@calculation.uk14%>
+  <%uk[15]=@calculation.uk15%>
  <head>
   <meta charset="utf-8">
 
 
-  <div class="accordion-group"align="center">
+
     <div class="accordion-heading"align="center">
       <a align="center"class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
         Таблица внешней скоростной характеристики двигателя
@@ -297,10 +315,10 @@
    <td><%=nE[i]=pNe[i]*@calculation.nu_b%></td>
    <td><%=pMe[i]=pNe[i]*9550/(ne[i])%></td>
    <td><%=me[i]=nE[i]*9550/(ne[i])%></td>
-   <%pk_ne[i]=me[i]*@calculation.uk1*@calculation.uo*@calculation.nu_t/rk %> 
-   <%va_ne[i]=ne[i]*rk/(@calculation.uk1*@calculation.uo)%> 
+ 
+
     </tr>
-  
+
     <%end%>
    </tbody>
  </table>
@@ -311,11 +329,13 @@
 <%g = Gruff::Line.new('800x700')%>
 <%g.title = "Внешняя скоростная характеристика двигателя" %>
 <%g.title_font_size=25%>
+ <%g.minimum_value = 0%>
+ <%   g.maximum_value = 300%>
 <%g.data("N'e(ne)", pNe)%>
 <%g.data("Ne(ne)", nE)%>
 <%g.data("M'e(ne)", pMe)%>
 <%g.data("Me(ne)", me)%>
-<%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
+<%g.labels = {0 => "0"  , 20 => "#{(ne[20]/1000).to_i}*10^3"  , 40 => "#{(ne[40]/1000).to_i}*10^3",  60 => "#{(ne[60]/1000).to_i}*10^3"  , 80 => "8*10^3"  }%>
 <%g.write('public/images/int_vel_ch_eng.png')%>
 <br/>
     <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo2">
@@ -328,44 +348,73 @@
 <br/> 
 <br/>
 
-  <h1><%=t '.title', :default => "Силовой баланс автомобиля (для первой передачи)" %></h1>
+  <h1><%=t '.title', :default => "Силовой баланс автомобиля " %></h1>
 
  
-    <div class="accordion-heading"align="center">
-      <a align="center"class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Таблица cилового баланс автомобиля (для первой передачи)
-      </a>
-    </div>
-    <div align="center"id="collapseOne" class="accordion-body collapse">
-      <div align="center"lass="accordion-inner">
- <table align="center"class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= "№" %></th>
+              <div class="accordion-heading"align="center">
+                <a align="center"class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  Таблица cилового баланс автомобиля (для  передачи)
+                </a>
+              </div>
+              <div align="center"id="collapseOne" class="accordion-body collapse">
+                <div align="center"lass="accordion-inner">
+           <table align="center"class="table table-striped">
+            <thead>
+              <tr>
+                <th><%= "№" %></th>
 
-       <th><%="Pk"%></th>
-       <th><%="Va"%></th>
-    </tr>
-  </thead>
-  <% for i in 0..70 %>
-   <tr>
-      <td> <%=i%></td>
-      <td> <%=pk_ne[i]%></td>
-      <td><%=va_ne[i]%></td>
-</tr>
+                 <th><%="Pk"%></th>
+                 <th><%="Va"%></th>
+              </tr>
+            </thead>
+<% for j in 1..5%>
+      <% for i in 0..70 %>
+                <%pk_n[i]=me[i]*uk[j]*@calculation.uo*@calculation.nu_t/rk %> 
+               <%va_n[i]=ne[i]*rk/(uk[j]*@calculation.uo)%> 
+               <tr>
 
-  <%end%>
- </table>
-    </div>
-  </div>
- </div>
+               
+       
+                  <td> <%=i%></td>
+                  <td> <%=pk_n[i]%></td>
+                  <td><%=va_n[i]%></td>
+                </tr>
+      <%end%> 
+     <br/>
+      <%=pk_ne[j]=pk_n%> 
+       <br/>
+        <%=va_ne[j]=va_n%>
+         <br/>
+<%end%>
+     </table>
+
+        </div>
+      </div>
+  
+  
+  <%=pk_ne[1]%>
+    <br/>
+  <%=pk_ne[2]%>
    <br/>
+
+
+   <%@vlabels= {
+        0 => '0',
+        21 => '100',
+        51 => '200',
+        71 => '300',
+        91 => '400'
+      } %>
 <%g = Gruff::Line.new('800x700')%>
+
+
 <%g.title = "Мощностной баланс авто" %>
 <%g.title_font_size=25%>
-<%g.data("Pk(ne)", pNe)%>
-<%g.data("Va(ne)", nE)%>
-<%g.labels = {0 => '0', 10 => '10', 20 => '20', 30 => '30', 40 => '40', 50 => '50', 60 => '60', 70 => '70', 80 => '80'}%>
+  <% for j in 1..5%>
+<%g.data("Pk(#{j})", pk_ne[j])%>
+<%end%>
+<%g.minimum_value = 0%>
+<%g.labels = @vlabels%>
 <%g.write('public/images/moshn_balance.png')%>
 <br/>
 <p align="center">
